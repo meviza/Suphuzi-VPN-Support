@@ -3,13 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Enterprise Demo Request — Suphuzi VPN</title>
-  <meta name="description" content="Request a custom enterprise VPN demo for your organization. Military-grade security for teams of all sizes." />
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="../ui/web/icons/Icon-192.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../ui/web/icons/Icon-192.png">
-  <link rel="apple-touch-icon" href="../ui/web/icons/Icon-512.png">
+  <title>Enterprise VPN Demo & B2B Bulk Voucher Request — Suphuzi VPN</title>
+  <meta name="description" content="Request a custom enterprise VPN demo or bulk B2B voucher quote for your organization. Hotels, airports, corporates — military-grade security, zero setup." />
+  <meta name="keywords" content="enterprise VPN demo, B2B VPN, corporate VPN, bulk VPN vouchers, VPN for hotels, VPN for airports, VPN çözümleri, Suphuzi enterprise" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://meviza.github.io/Suphuzi-VPN-Support/enterprise-demo.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Enterprise VPN Demo Request — Suphuzi VPN" />
+  <meta property="og:description" content="Military-grade VPN for businesses. Bulk B2B vouchers. Hotels, airports, corporates. Zero setup required." />
+
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366f1'><path fill-rule='evenodd' d='M12 1.5a5.25 5.25 0 00-5.25 5.25v3a3 3 0 00-3 3v6.75a3 3 0 003 3h10.5a3 3 0 003-3v-6.75a3 3 0 00-3-3v-3c0-2.9-2.35-5.25-5.25-5.25zm3.75 8.25v-3a3.75 3.75 0 10-7.5 0v3h7.5z' clip-rule='evenodd'/></svg>" />
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -359,6 +363,41 @@
                   <option value="annual_per_user">Annual Per-User Quota</option>
                   <option value="custom">Custom Enterprise Solution</option>
                 </select>
+              </div>
+            </div>
+
+            <!-- B2B-specific fields: packages count + tier preference -->
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-medium text-gray-300 mb-2">Number of Packages (Bulk Codes) *</label>
+                <select name="packages_count" required
+                  class="form-select w-full px-4 py-3 rounded-xl text-white outline-none">
+                  <option value="">How many voucher codes?</option>
+                  <option value="10-50">10 – 50 codes</option>
+                  <option value="51-100">51 – 100 codes</option>
+                  <option value="101-500">101 – 500 codes</option>
+                  <option value="501-1000">501 – 1 000 codes</option>
+                  <option value="1000+">1 000+ codes (enterprise bulk)</option>
+                </select>
+                <p class="text-xs text-gray-500 mt-1">Each voucher code is distributed to one staff member or guest.</p>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-300 mb-2">Preferred Access Type *</label>
+                <select name="access_preference" required
+                  class="form-select w-full px-4 py-3 rounded-xl text-white outline-none">
+                  <option value="">GB quota or premium tier?</option>
+                  <option value="gb_quota_5">5 GB quota per code (TRIAL)</option>
+                  <option value="gb_quota_20">20 GB quota per code</option>
+                  <option value="gb_quota_50">50 GB quota per code</option>
+                  <option value="pro_tier">PRO tier — 30 days per code (unlimited)</option>
+                  <option value="ultra_tier">ULTRA tier — 30 days per code (all features)</option>
+                  <option value="custom">Custom / mixed (discuss with team)</option>
+                </select>
+                <p class="text-xs text-gray-500 mt-1">
+                  GB quota codes are great for short stays (hotels, airports).<br/>
+                  Tier codes unlock premium features for staff.
+                </p>
               </div>
             </div>
 
