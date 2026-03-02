@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GDPR Compliance — Suphuzi VPN</title>
+  <meta name="description" content="Suphuzi VPN GDPR Compliance - Your data protection rights under European Union law." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../ui/web/icons/Icon-192.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../ui/web/icons/Icon-192.png">
+  <link rel="apple-touch-icon" href="../ui/web/icons/Icon-512.png">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=SF+Pro+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #f8fafc;
+      overflow-x: hidden;
+    }
+
+    .glass-morphism {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-blur {
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body class="antialiased">
+  
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/30">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-6 h-6"><path fill-rule="evenodd" d="M12 1.5a5.25 5.25 0 00-5.25 5.25v3a3 3 0 00-3 3v6.75a3 3 0 003 3h10.5a3 3 0 003-3v-6.75a3 3 0 00-3-3v-3c0-2.9-2.35-5.25-5.25-5.25zm3.75 8.25v-3a3.75 3.75 0 10-7.5 0v3h7.5z" clip-rule="evenodd" /></svg>
+          </div>
+          <span class="text-xl font-bold text-white">Suphuzi VPN</span>
+        </div>
+        
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a>
+          <a href="index.html#features" class="text-gray-300 hover:text-white transition-colors">Features</a>
+          <a href="index.html#security" class="text-gray-300 hover:text-white transition-colors">Security</a>
+          <a href="index.html#pricing" class="text-gray-300 hover:text-white transition-colors">Pricing</a>
+          <a href="support.html" class="text-gray-300 hover:text-white transition-colors">Support</a>
+        </div>
+
+        <button class="md:hidden text-white" id="mobile-menu-btn">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="hidden md:hidden absolute top-full left-0 right-0 glass-morphism border-t border-white/10" id="mobile-menu">
+      <div class="px-6 py-4 space-y-3">
+        <a href="index.html" class="block text-gray-300 hover:text-white transition-colors">Home</a>
+        <a href="index.html#features" class="block text-gray-300 hover:text-white transition-colors">Features</a>
+        <a href="index.html#security" class="block text-gray-300 hover:text-white transition-colors">Security</a>
+        <a href="index.html#pricing" class="block text-gray-300 hover:text-white transition-colors">Pricing</a>
+        <a href="support.html" class="block text-gray-300 hover:text-white transition-colors">Support</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center px-6 pt-20">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center space-x-2 glass-morphism px-4 py-2 rounded-full mb-8">
+        <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+        <span class="text-sm text-green-400 font-medium">GDPR Compliant • Last Updated: March 2024</span>
+      </div>
+
+      <h1 class="text-5xl md:text-6xl font-bold mb-6">
+        <span class="block text-white">GDPR</span>
+        <span class="gradient-text">Your Rights Protected</span>
+      </h1>
+
+      <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+        Suphuzi VPN is fully compliant with the General Data Protection Regulation (GDPR). We protect your data with the highest standards of privacy and security.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+        <div class="glass-morphism rounded-2xl p-6">
+          <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Full Compliance</h3>
+          <p class="text-gray-300 text-sm">100% GDPR compliant with data protection by design and by default.</p>
+        </div>
+        <div class="glass-morphism rounded-2xl p-6">
+          <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="user-check" class="w-6 h-6 text-white"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Your Control</h3>
+          <p class="text-gray-300 text-sm">Complete control over your personal data with easy-to-use tools.</p>
+        </div>
+        <div class="glass-morphism rounded-2xl p-6">
+          <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="gavel" class="w-6 h-6 text-white"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Legal Protection</h3>
+          <p class="text-gray-300 text-sm">Your rights are protected under EU law with full legal recourse.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GDPR Content -->
+  <section class="py-24 px-6 border-t border-white/10">
+    <div class="max-w-4xl mx-auto">
+      
+      <div class="glass-morphism rounded-2xl p-8 mb-8">
+        <h2 class="text-3xl font-bold text-white mb-6">1. What is GDPR?</h2>
+        <div class="space-y-4 text-gray-300 leading-relaxed">
+          <p>The General Data Protection Regulation (GDPR) is a comprehensive data protection law that strengthens and unifies data protection for individuals within the European Union (EU) and the European Economic Area (EEA).</p>
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li><strong>Effective Date:</strong> May 25, 2018</li>
+            <li><strong>Scope:</strong> All EU citizens and residents</li>
+            <li><strong>Global Reach:</strong> Applies to any company processing EU citizens' data</li>
+            <li><strong>Fines:</strong> Up to €20 million or 4% of global annual turnover</li>
+            <li><strong>Core Principle:</strong> Privacy by design and by default</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="glass-morphism rounded-2xl p-8 mb-8">
+        <h2 class="text-3xl font-bold text-white mb-6">2. Our GDPR Commitment</h2>
+        <div class="space-y-4 text-gray-300 leading-relaxed">
+          <p>Suphuzi VPN is fully committed to GDPR compliance and protecting your personal data:</p>
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li><strong>✅ Data Protection Officer (DPO):strong> Appointed to oversee GDPR compliance</li>
+            <li><strong>✅ Privacy by Design:</strong> Built into our systems from the ground up</li>
+            <li><strong>✅ Regular Audits:</strong> Continuous compliance monitoring and improvement</li>
+            <li><strong>✅ Staff Training:</strong> All employees trained on GDPR requirements</li>
+            <li><strong>✅ Legal Basis:</strong> Clear legal basis for all data processing activities</li>
+            <li><strong>✅ Documentation:</strong> Comprehensive records of processing activities</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="glass-morphism rounded-2xl p-8 mb-8">
+        <h2 class="text-3xl font-bold text-white mb-6">3. Your GDPR Rights</h2>
+        <div class="space-y-4 text-gray-300 leading-relaxed">
+          <p>Under GDPR, you have the following fundamental rights regarding your personal data:</p>
+          
+          <div class="space-y-6">
+            <div class="border-l-4 border-blue-500 pl-4">
+              <h4 class="text-xl font-semibold text-white mb-2">🔍 Right to Information</h4>
+              <p class="text-gray-300">Know what data we collect, why we collect it, and how we use it. Transparent information about all processing activities.</p>
+            </div>
+            
+            <div class="border-l-4 border-green-500 pl-4">
+              <h4 class="text-xl font-semibold text-white mb-2">📥 Right to Access</h4>
+              <p class="text-gray-300">Request a copy of all personal data we hold about you. We'll provide it in a commonly used electronic format.</p>
+            </div>
+            
+            <div class="border-l-4 border-purple-500 pl-4">
+              <h4 class="text-xl font-semibold text-white mb-2">✏️ Right to Rectification</h4>
+              <p class="text-gray-300">Request correction of inaccurate or incomplete personal data. We'll update our records promptly.</p>
+            </div>
+            
+            <div class="border-l-4 border-red-500 pl-4">
+              <h4 class="text-xl font-semibold text-white mb-2">🗑️ Right to Erasure (Right to be Forgotten)</h4>
+              <p class="text-gray-300">Request deletion of your personal data when it's no longer necessary or if you withdraw consent.</p>
+            </div>
+            
+            <div class="border-l-4 border-yellow-500 pl-4">
+              <h4 class="text-xl font-semibold text-white mb-2">⏸️ Right to Restrict Processing</h4>
+              <p class="text-gray-300">Request restriction of processing your personal data under certain conditions.</p>
+            </div>
+            
+            <div class="border-l-4 border-cyan-500 pl-4">
+              <h4 class="text-xl font-semibold text-white mb-2">📤 Right to Data Portability</h4>
+              <p class="text-gray-300">Receive your data in a structured, machine-readable format and transfer it to another service provider.</p>
+            </div>
+            
+            <div class="border-l-4 border-pink-500 pl-4">
+              <h4 class="text-xl font-semibold text-white mb-2">🚫 Right to Object</h4>
+              <p class="text-gray-300">Object to processing of your personal data for direct marketing or other legitimate interests.</p>
+            </div>
+            
+            <div class="border-l-4 border-indigo-500 pl-4">
+              <h4 class="text-xl font-semibold text-white mb-2">🤖 Right to Automated Decision Making</h4>
+              <p class="text-gray-300">Not be subject to decisions based solely on automated processing, including profiling.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-morphism rounded-2xl p-8 mb-8">
+        <h2 class="text-3xl font-bold text-white mb-6">4. Data We Process</h2>
+        <div class="space-y-4 text-gray-300 leading-relaxed">
+          <p>Due to our zero-logs policy, we process minimal personal data:</p>
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li><strong>Account Data (if you create one):</strong> Email address, username, subscription status</li>
+            <li><strong>Payment Data:</strong> Processed by third-party payment processors, not stored by us</li>
+            <li><strong>Support Requests:</strong> Only the information you voluntarily provide when contacting us</li>
+            <li><strong>Technical Data:</strong> Anonymous usage metrics for service optimization</li>
+            <li><strong>❌ We DON'T process:</strong> Browsing history, connection logs, IP addresses, DNS queries</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="glass-morphism rounded-2xl p-8 mb-8">
+        <h2 class="text-3xl font-bold text-white mb-6">5. Legal Basis for Processing</h2>
+        <div class="space-y-4 text-gray-300 leading-relaxed">
+          <p>We only process personal data when we have a valid legal basis under GDPR:</p>
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li><strong>📝 Consent:</strong> When you explicitly agree to us processing your data</li>
+            <li><strong>📋 Contract:</strong> When necessary to provide our VPN service to you</li>
+            <li><strong>⚖️ Legal Obligation:</strong> When required by law (rare, due to our privacy-first approach)</li>
+            <li><strong>🏢 Legitimate Interests:</strong> When we have a legitimate business reason that doesn't override your rights</li>
+            <li><strong>🔒 Vital Interests:</strong> To protect your life or in emergency situations</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="glass-morphism rounded-2xl p-8 mb-8">
+        <h2 class="text-3xl font-bold text-white mb-6">6. Data Subject Requests</h2>
+        <div class="space-y-4 text-gray-300 leading-relaxed">
+          <p>How to exercise your GDPR rights:</p>
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li><strong>📧 Email Request:</strong> Send your request to kerem.newton571@gmail.com</li>
+            <li><strong>🆔 Identity Verification:</strong> We may need to verify your identity for security</li>
+            <li><strong>⏱️ Response Time:</strong> We respond within one month (30 days)</li>
+            <li><strong>📋 Detailed Information:</strong> Include specific details about your request</li>
+            <li><strong>🌍 Language Support:</strong> Requests accepted in English and Turkish</li>
+            <li><strong>📞 No Fees:</strong> No charge for reasonable requests (limited fees for excessive requests)</li>
+          </ul>
+          
+          <div class="mt-6 p-4 rounded-xl border border-blue-500/20 bg-blue-500/5">
+            <p class="text-blue-300 text-sm"><strong>Quick Request:</strong> Email <a href="mailto:kerem.newton571@gmail.com?subject=GDPR%20Request" class="text-blue-300 underline">kerem.newton571@gmail.com</a> with "GDPR Request" in the subject line.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-morphism rounded-2xl p-8 mb-8">
+        <h2 class="text-3xl font-bold text-white mb-6">7. Data Breach Notification</h2>
+        <div class="space-y-4 text-gray-300 leading-relaxed">
+          <p>Our commitment to transparency in case of data breaches:</p>
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li><strong>🚨 Immediate Assessment:</strong> We assess any potential breach within 72 hours</li>
+            <li><strong>📢 Notification:</strong> We notify affected users without undue delay</li>
+            <li><strong>🏛️ Regulatory Notification:</strong> We report to relevant authorities within 72 hours</li>
+            <li><strong>📋 Detailed Information:</strong> We provide clear information about the breach and its impact</li>
+            <li><strong>🛡️ Mitigation Measures:</strong> We immediately implement measures to prevent further damage</li>
+            <li><strong>📞 Support:</strong> We provide dedicated support for affected users</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="glass-morphism rounded-2xl p-8 mb-8">
+        <h2 class="text-3xl font-bold text-white mb-6">8. International Data Transfers</h2>
+        <div class="space-y-4 text-gray-300 leading-relaxed">
+          <p>How we protect your data when it's transferred internationally:</p>
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li><strong>🇪🇺 EU/EEA Processing:</strong> Primary data processing within the EU/EEA</li>
+            <li><strong>🛡️ Adequate Protection:</strong> Only transfer to countries with adequate data protection</li>
+            <li><strong>📜 Standard Contractual Clauses:</strong> Use EU-approved standard contracts for transfers</li>
+            <li><strong>🔒 Encryption:</strong> All international transfers use end-to-end encryption</li>
+            <li><strong>📊 Minimal Data:</strong> Only transfer essential, anonymized data when necessary</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="glass-morphism rounded-2xl p-8 mb-8">
+        <h2 class="text-3xl font-bold text-white mb-6">9. Children's Data (Under 16)</h2>
+        <div class="space-y-4 text-gray-300 leading-relaxed">
+          <p>Special protections for children's personal data:</p>
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li><strong>🚫 No Targeting:</strong> We don't target children with our services</li>
+            <li><strong>👨‍👩‍👧‍👦 Parental Consent:</strong> Parental consent required for under-16s</li>
+            <li><strong>🔒 Enhanced Protection:</strong> Additional safeguards for children's data</li>
+            <li><strong>📚 Educational Resources:</strong> Clear information for children and parents</li>
+            <li><strong>⚡ Immediate Response:</strong> Priority handling of children's data requests</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="glass-morphism rounded-2xl p-8">
+        <h2 class="text-3xl font-bold text-white mb-6">10. Contact Our Data Protection Officer</h2>
+        <div class="space-y-4 text-gray-300 leading-relaxed">
+          <p>For GDPR-related inquiries and data protection matters:</p>
+          <div class="space-y-3">
+            <p><strong>Data Protection Officer:</strong> <a href="mailto:kerem.newton571@gmail.com" class="text-blue-400 hover:text-blue-300">kerem.newton571@gmail.com</a></p>
+            <p><strong>General Inquiries:</strong> <a href="mailto:antempostudios@gmail.com" class="text-blue-400 hover:text-blue-300">antempostudios@gmail.com</a></p>
+            <p><strong>Response Time:</strong> GDPR requests within 30 days, urgent matters within 72 hours</p>
+            <p><strong>Language Support:</strong> English, Turkish, and major EU languages</p>
+            <p><strong>Legal Reference:</strong> GDPR Regulation (EU) 2016/679</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GDPR Rights Actions -->
+  <section class="py-24 px-6 border-t border-white/10">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-white mb-4">Exercise Your Rights</h2>
+        <p class="text-xl text-gray-300">Take action to protect your data privacy</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="glass-morphism rounded-2xl p-6 text-center">
+          <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="download" class="w-6 h-6 text-white"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Access My Data</h3>
+          <p class="text-gray-300 text-sm mb-4">Request a copy of all your personal data</p>
+          <a href="mailto:kerem.newton571@gmail.com?subject=GDPR%20Access%20Request" class="btn-secondary px-4 py-2 rounded-full text-white text-sm">Request Access</a>
+        </div>
+        
+        <div class="glass-morphism rounded-2xl p-6 text-center">
+          <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="trash-2" class="w-6 h-6 text-white"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Delete My Data</h3>
+          <p class="text-gray-300 text-sm mb-4">Exercise your right to be forgotten</p>
+          <a href="mailto:kerem.newton571@gmail.com?subject=GDPR%20Deletion%20Request" class="btn-secondary px-4 py-2 rounded-full text-white text-sm">Request Deletion</a>
+        </div>
+        
+        <div class="glass-morphism rounded-2xl p-6 text-center">
+          <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="edit" class="w-6 h-6 text-white"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Correct My Data</h3>
+          <p class="text-gray-300 text-sm mb-4">Update or fix inaccurate personal data</p>
+          <a href="mailto:kerem.newton571@gmail.com?subject=GDPR%20Correction%20Request" class="btn-secondary px-4 py-2 rounded-full text-white text-sm">Request Correction</a>
+        </div>
+        
+        <div class="glass-morphism rounded-2xl p-6 text-center">
+          <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="file-text" class="w-6 h-6 text-white"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Port My Data</h3>
+          <p class="text-gray-300 text-sm mb-4">Transfer your data to another service</p>
+          <a href="mailto:kerem.newton571@gmail.com?subject=GDPR%20Portability%20Request" class="btn-secondary px-4 py-2 rounded-full text-white text-sm">Request Portability</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 py-16 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-12">
+        <div>
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/30">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-6 h-6"><path fill-rule="evenodd" d="M12 1.5a5.25 5.25 0 00-5.25 5.25v3a3 3 0 00-3 3v6.75a3 3 0 003 3h10.5a3 3 0 003-3v-6.75a3 3 0 00-3-3v-3c0-2.9-2.35-5.25-5.25-5.25zm3.75 8.25v-3a3.75 3.75 0 10-7.5 0v3h7.5z" clip-rule="evenodd" /></svg>
+            </div>
+            <span class="text-xl font-bold text-white">Suphuzi VPN</span>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed">Military-grade privacy protection with RAM-only servers and zero logs. Your privacy is our promise.</p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-4">Product</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html#features" class="text-gray-400 hover:text-white transition-colors text-sm">Features</a></li>
+            <li><a href="index.html#security" class="text-gray-400 hover:text-white transition-colors text-sm">Security</a></li>
+            <li><a href="index.html#pricing" class="text-gray-400 hover:text-white transition-colors text-sm">Pricing</a></li>
+            <li><a href="index.html#download" class="text-gray-400 hover:text-white transition-colors text-sm">Download</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-4">Support</h4>
+          <ul class="space-y-2">
+            <li><a href="support.html" class="text-gray-400 hover:text-white transition-colors text-sm">Help Center</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Contact Us</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Status</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Community</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-4">Legal</h4>
+          <ul class="space-y-2">
+            <li><a href="privacy.html" class="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a></li>
+            <li><a href="terms.html" class="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</a></li>
+            <li><a href="cookies.html" class="text-gray-400 hover:text-white transition-colors text-sm">Cookie Policy</a></li>
+            <li><a href="gdpr.html" class="text-blue-400 hover:text-blue-300 text-sm">GDPR</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2024 Suphuzi VPN. All rights reserved.</p>
+        <div class="flex space-x-6">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">
+            <i data-lucide="twitter" class="w-5 h-5"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">
+            <i data-lucide="github" class="w-5 h-5"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">
+            <i data-lucide="telegram" class="w-5 h-5"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          // Close mobile menu if open
+          mobileMenu.classList.add('hidden');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

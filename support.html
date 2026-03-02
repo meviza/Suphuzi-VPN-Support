@@ -5,22 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Support — Suphuzi VPN</title>
   <meta name="description" content="Get help with Suphuzi VPN. FAQ, troubleshooting guides, and direct support." />
-  
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="../ui/web/icons/Icon-192.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../ui/web/icons/Icon-192.png">
   <link rel="apple-touch-icon" href="../ui/web/icons/Icon-512.png">
-  
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=SF+Pro+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
+
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  
+
   <style>
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
@@ -83,6 +83,16 @@
       transform: translateY(-2px);
     }
 
+    .btn-enterprise {
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      transition: all 0.3s ease;
+    }
+
+    .btn-enterprise:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.45);
+    }
+
     .search-input {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
@@ -139,25 +149,44 @@
       border: 2px solid rgba(59, 130, 246, 0.5);
       background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
     }
+
+    .enterprise-support-card {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.07) 100%);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .enterprise-support-card:hover {
+      border-color: rgba(99, 102, 241, 0.6);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+    }
+
+    .enterprise-icon {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+    }
   </style>
 </head>
 <body class="antialiased">
-  
+
   <!-- Navigation -->
   <nav class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-white/10">
     <div class="max-w-7xl mx-auto px-6 py-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center space-x-3">
-          <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-            <i data-lucide="shield" class="w-6 h-6 text-white"></i>
+          <!-- Suphuzi Shield Logo -->
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/30">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-6 h-6"><path fill-rule="evenodd" d="M12 1.5a5.25 5.25 0 00-5.25 5.25v3a3 3 0 00-3 3v6.75a3 3 0 003 3h10.5a3 3 0 003-3v-6.75a3 3 0 00-3-3v-3c0-2.9-2.35-5.25-5.25-5.25zm3.75 8.25v-3a3.75 3.75 0 10-7.5 0v3h7.5z" clip-rule="evenodd" /></svg>
           </div>
           <span class="text-xl font-bold text-white">Suphuzi VPN</span>
         </div>
-        
+
         <div class="hidden md:flex items-center space-x-8">
           <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a>
           <a href="index.html#features" class="text-gray-300 hover:text-white transition-colors">Features</a>
           <a href="index.html#security" class="text-gray-300 hover:text-white transition-colors">Security</a>
+          <a href="index.html#enterprise" class="text-gray-300 hover:text-white transition-colors">Enterprise</a>
           <a href="index.html#pricing" class="text-gray-300 hover:text-white transition-colors">Pricing</a>
           <a href="support.html" class="text-blue-400 font-medium">Support</a>
         </div>
@@ -174,6 +203,7 @@
         <a href="index.html" class="block text-gray-300 hover:text-white transition-colors">Home</a>
         <a href="index.html#features" class="block text-gray-300 hover:text-white transition-colors">Features</a>
         <a href="index.html#security" class="block text-gray-300 hover:text-white transition-colors">Security</a>
+        <a href="index.html#enterprise" class="block text-gray-300 hover:text-white transition-colors">Enterprise</a>
         <a href="index.html#pricing" class="block text-gray-300 hover:text-white transition-colors">Pricing</a>
         <a href="support.html" class="block text-blue-400 font-medium">Support</a>
       </div>
@@ -198,9 +228,9 @@
           <div class="absolute left-4 top-1/2 transform -translate-y-1/2">
             <i data-lucide="search" class="w-5 h-5 text-gray-400"></i>
           </div>
-          <input 
-            type="text" 
-            placeholder="Search for answers..." 
+          <input
+            type="text"
+            placeholder="Search for answers..."
             class="search-input w-full pl-12 pr-6 py-4 rounded-2xl text-white placeholder-gray-400 outline-none text-lg"
             id="search-input"
           >
@@ -260,7 +290,7 @@
           <div class="category-icon w-16 h-16 rounded-xl flex items-center justify-center mb-6">
             <i data-lucide="credit-card" class="w-8 h-8 text-green-400"></i>
           </div>
-          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-green-400 transition-colors">Billing & Plans</h3>
+          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-green-400 transition-colors">Billing &amp; Plans</h3>
           <p class="text-gray-300 leading-relaxed">Manage your subscription, payments, and plan upgrades or downgrades.</p>
           <div class="mt-4 text-green-400 font-medium flex items-center group-hover:translate-x-2 transition-transform">
             Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
@@ -271,7 +301,7 @@
           <div class="category-icon w-16 h-16 rounded-xl flex items-center justify-center mb-6">
             <i data-lucide="lock" class="w-8 h-8 text-red-400"></i>
           </div>
-          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-red-400 transition-colors">Privacy & Security</h3>
+          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-red-400 transition-colors">Privacy &amp; Security</h3>
           <p class="text-gray-300 leading-relaxed">Learn how we protect your data and maintain your privacy.</p>
           <div class="mt-4 text-red-400 font-medium flex items-center group-hover:translate-x-2 transition-transform">
             Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
@@ -306,7 +336,7 @@
   <!-- FAQ Sections -->
   <section class="py-24 px-6 border-t border-white/10">
     <div class="max-w-4xl mx-auto">
-      
+
       <!-- Getting Started -->
       <div class="mb-16" id="getting-started">
         <h2 class="text-3xl font-bold text-white mb-8 flex items-center">
@@ -403,7 +433,7 @@
       <div class="mb-16" id="billing">
         <h2 class="text-3xl font-bold text-white mb-8 flex items-center">
           <i data-lucide="credit-card" class="w-8 h-8 text-green-400 mr-3"></i>
-          Billing & Plans
+          Billing &amp; Plans
         </h2>
 
         <div class="space-y-4">
@@ -500,14 +530,107 @@
     </div>
   </section>
 
+  <!-- Enterprise Support Section -->
+  <section class="py-24 px-6 border-t border-white/10" id="enterprise-support">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full mb-6" style="background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.3);">
+          <i data-lucide="shield-check" class="w-4 h-4 text-indigo-400"></i>
+          <span class="text-sm font-semibold text-indigo-300">Enterprise &amp; Defense</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Enterprise Support</h2>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+          Dedicated support for military, government, and enterprise organizations operating in high-stakes environments.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+        <!-- Enterprise SLA card -->
+        <div class="enterprise-support-card rounded-2xl p-8">
+          <div class="enterprise-icon w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+            <i data-lucide="building-2" class="w-7 h-7 text-indigo-400"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-3">For Military, Government &amp; Enterprise Organizations</h3>
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            Enterprise clients receive dedicated account management, priority incident response, and direct access to our security engineering team. SLA guarantees are available for organizations requiring formal uptime commitments.
+          </p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center space-x-3">
+              <i data-lucide="check-circle" class="w-5 h-5 text-indigo-400 flex-shrink-0"></i>
+              <span class="text-gray-300 text-sm">Dedicated account manager</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i data-lucide="check-circle" class="w-5 h-5 text-indigo-400 flex-shrink-0"></i>
+              <span class="text-gray-300 text-sm">Priority incident response (&lt;1 hour SLA)</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i data-lucide="check-circle" class="w-5 h-5 text-indigo-400 flex-shrink-0"></i>
+              <span class="text-gray-300 text-sm">Direct security engineering access</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i data-lucide="check-circle" class="w-5 h-5 text-indigo-400 flex-shrink-0"></i>
+              <span class="text-gray-300 text-sm">Custom deployment &amp; onboarding</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i data-lucide="check-circle" class="w-5 h-5 text-indigo-400 flex-shrink-0"></i>
+              <span class="text-gray-300 text-sm">Compliance documentation support</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Request proposal card -->
+        <div class="enterprise-support-card rounded-2xl p-8 flex flex-col justify-between" style="background: linear-gradient(135deg, rgba(99,102,241,0.13) 0%, rgba(139,92,246,0.1) 100%); border-color: rgba(99,102,241,0.45);">
+          <div>
+            <div class="enterprise-icon w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+              <i data-lucide="file-text" class="w-7 h-7 text-purple-400"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3">Request a Custom Proposal</h3>
+            <p class="text-gray-300 mb-6 leading-relaxed">
+              Every enterprise deployment is scoped to your organization's specific threat model, regulatory requirements, and infrastructure. Tell us about your environment and we will prepare a tailored security and support proposal within 24 hours.
+            </p>
+
+            <div class="glass-morphism rounded-xl p-5 mb-8">
+              <div class="text-sm text-gray-400 mb-3 font-medium uppercase tracking-wider">What to include in your inquiry</div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li class="flex items-start space-x-2">
+                  <i data-lucide="dot" class="w-4 h-4 text-indigo-400 flex-shrink-0 mt-0.5"></i>
+                  <span>Organization type (military, government, financial, enterprise)</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <i data-lucide="dot" class="w-4 h-4 text-indigo-400 flex-shrink-0 mt-0.5"></i>
+                  <span>Number of users / devices requiring coverage</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <i data-lucide="dot" class="w-4 h-4 text-indigo-400 flex-shrink-0 mt-0.5"></i>
+                  <span>Compliance frameworks (PCI-DSS, SOC 2, GDPR, etc.)</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <i data-lucide="dot" class="w-4 h-4 text-indigo-400 flex-shrink-0 mt-0.5"></i>
+                  <span>Deployment preference (cloud, on-premise, hybrid)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <a href="mailto:kerem.newton571@gmail.com" class="btn-enterprise px-8 py-4 rounded-full text-white font-semibold text-lg inline-flex items-center justify-center space-x-3 w-full">
+            <i data-lucide="send" class="w-5 h-5"></i>
+            <span>Contact Enterprise Team</span>
+          </a>
+          <p class="text-gray-500 text-sm text-center mt-3">kerem.newton571@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="border-t border-white/10 py-16 px-6">
     <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-4 gap-8 mb-12">
         <div>
           <div class="flex items-center space-x-3 mb-4">
-            <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-              <i data-lucide="shield" class="w-6 h-6 text-white"></i>
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/30">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-6 h-6"><path fill-rule="evenodd" d="M12 1.5a5.25 5.25 0 00-5.25 5.25v3a3 3 0 00-3 3v6.75a3 3 0 003 3h10.5a3 3 0 003-3v-6.75a3 3 0 00-3-3v-3c0-2.9-2.35-5.25-5.25-5.25zm3.75 8.25v-3a3.75 3.75 0 10-7.5 0v3h7.5z" clip-rule="evenodd" /></svg>
             </div>
             <span class="text-xl font-bold text-white">Suphuzi VPN</span>
           </div>
@@ -519,6 +642,7 @@
           <ul class="space-y-2">
             <li><a href="index.html#features" class="text-gray-400 hover:text-white transition-colors text-sm">Features</a></li>
             <li><a href="index.html#security" class="text-gray-400 hover:text-white transition-colors text-sm">Security</a></li>
+            <li><a href="index.html#enterprise" class="text-gray-400 hover:text-white transition-colors text-sm">Enterprise</a></li>
             <li><a href="index.html#pricing" class="text-gray-400 hover:text-white transition-colors text-sm">Pricing</a></li>
             <li><a href="index.html#download" class="text-gray-400 hover:text-white transition-colors text-sm">Download</a></li>
           </ul>
@@ -529,16 +653,16 @@
           <ul class="space-y-2">
             <li><a href="support.html" class="text-gray-400 hover:text-white transition-colors text-sm">Help Center</a></li>
             <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Contact Us</a></li>
+            <li><a href="#enterprise-support" class="text-gray-400 hover:text-white transition-colors text-sm">Enterprise Support</a></li>
             <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Status</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Community</a></li>
           </ul>
         </div>
 
         <div>
           <h4 class="font-semibold text-white mb-4">Legal</h4>
           <ul class="space-y-2">
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</a></li>
+            <li><a href="privacy.html" class="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a></li>
+            <li><a href="terms.html" class="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</a></li>
             <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Cookie Policy</a></li>
             <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">GDPR</a></li>
           </ul>
@@ -569,7 +693,7 @@
     // Mobile menu toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    
+
     mobileMenuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
@@ -579,12 +703,12 @@
       question.addEventListener('click', () => {
         const faqItem = question.parentElement;
         const isOpen = faqItem.classList.contains('open');
-        
+
         // Close all FAQ items
         document.querySelectorAll('.faq-item').forEach(item => {
           item.classList.remove('open');
         });
-        
+
         // Open clicked item if it wasn't open
         if (!isOpen) {
           faqItem.classList.add('open');
@@ -597,11 +721,11 @@
     searchInput.addEventListener('input', (e) => {
       const searchTerm = e.target.value.toLowerCase();
       const faqItems = document.querySelectorAll('.faq-item');
-      
+
       faqItems.forEach(item => {
         const question = item.querySelector('.faq-question').textContent.toLowerCase();
         const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
-        
+
         if (question.includes(searchTerm) || answer.includes(searchTerm)) {
           item.style.display = 'block';
         } else {
