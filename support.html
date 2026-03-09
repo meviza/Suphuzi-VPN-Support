@@ -4,623 +4,67 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Support — Suphuzi VPN</title>
-  <meta name="description" content="Get help with Suphuzi VPN. FAQ, troubleshooting guides, and direct support." />
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="../ui/web/icons/Icon-192.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../ui/web/icons/Icon-192.png">
-  <link rel="apple-touch-icon" href="../ui/web/icons/Icon-512.png">
-  
-  <!-- Fonts -->
+  <meta name="description" content="Support resources for Suphuzi VPN." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=SF+Pro+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  
-  <!-- Tailwind CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  
   <style>
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      color: #f8fafc;
-      overflow-x: hidden;
-    }
-
-    .glass-morphism {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .gradient-text {
-      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-gradient {
-      background: radial-gradient(ellipse at top, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-                  radial-gradient(ellipse at bottom, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
-    }
-
-    .card-hover {
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .card-hover:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    }
-
-    .nav-blur {
-      background: rgba(15, 23, 42, 0.8);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-      transition: all 0.3s ease;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      transition: all 0.3s ease;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: translateY(-2px);
-    }
-
-    .search-input {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
-    }
-
-    .search-input:focus {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(59, 130, 246, 0.5);
-      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-    }
-
-    .faq-item {
-      transition: all 0.3s ease;
-    }
-
-    .faq-item:hover {
-      background: rgba(255, 255, 255, 0.05);
-    }
-
-    .faq-arrow {
-      transition: transform 0.3s ease;
-    }
-
-    .faq-item.open .faq-arrow {
-      transform: rotate(180deg);
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-    }
-
-    .faq-item.open .faq-answer {
-      max-height: 500px;
-    }
-
-    .category-icon {
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
-      border: 1px solid rgba(59, 130, 246, 0.2);
-    }
-
-    .contact-card {
-      transition: all 0.3s ease;
-    }
-
-    .contact-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    }
-
-    .contact-card.featured {
-      border: 2px solid rgba(59, 130, 246, 0.5);
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
-    }
+    body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #020617 0%, #111827 100%); color: #f8fafc; }
+    .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(18px); border: 1px solid rgba(255, 255, 255, 0.08); }
+    .nav { background: rgba(2, 6, 23, 0.82); backdrop-filter: blur(18px); }
   </style>
 </head>
 <body class="antialiased">
-  
-  <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-6 py-4">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center space-x-3">
-          <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-            <i data-lucide="shield" class="w-6 h-6 text-white"></i>
-          </div>
-          <span class="text-xl font-bold text-white">Suphuzi VPN</span>
-        </div>
-        
-        <div class="hidden md:flex items-center space-x-8">
-          <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a>
-          <a href="index.html#features" class="text-gray-300 hover:text-white transition-colors">Features</a>
-          <a href="index.html#security" class="text-gray-300 hover:text-white transition-colors">Security</a>
-          <a href="index.html#pricing" class="text-gray-300 hover:text-white transition-colors">Pricing</a>
-          <a href="support.html" class="text-blue-400 font-medium">Support</a>
-        </div>
-
-        <button class="md:hidden text-white" id="mobile-menu-btn">
-          <i data-lucide="menu" class="w-6 h-6"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div class="hidden md:hidden absolute top-full left-0 right-0 glass-morphism border-t border-white/10" id="mobile-menu">
-      <div class="px-6 py-4 space-y-3">
-        <a href="index.html" class="block text-gray-300 hover:text-white transition-colors">Home</a>
-        <a href="index.html#features" class="block text-gray-300 hover:text-white transition-colors">Features</a>
-        <a href="index.html#security" class="block text-gray-300 hover:text-white transition-colors">Security</a>
-        <a href="index.html#pricing" class="block text-gray-300 hover:text-white transition-colors">Pricing</a>
-        <a href="support.html" class="block text-blue-400 font-medium">Support</a>
+  <nav class="nav fixed inset-x-0 top-0 z-50 border-b border-white/10">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a href="index.html" class="text-xl font-bold text-white">Suphuzi VPN</a>
+      <div class="hidden gap-6 text-sm text-slate-300 md:flex">
+        <a href="index.html" class="hover:text-white">Home</a>
+        <a href="privacy.html" class="hover:text-white">Privacy</a>
+        <a href="terms.html" class="hover:text-white">Terms</a>
+        <a href="account-deletion.html" class="hover:text-white">Account Deletion</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="min-h-screen flex items-center justify-center px-6 pt-20 hero-gradient">
-    <div class="max-w-4xl mx-auto text-center">
-      <h1 class="text-5xl md:text-6xl font-bold mb-6">
-        <span class="block text-white">How can we</span>
-        <span class="gradient-text">help you?</span>
-      </h1>
-
-      <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
-        Search our knowledge base or browse topics below to find answers to your questions.
+  <main class="mx-auto max-w-5xl px-6 pb-20 pt-28">
+    <div class="mb-10">
+      <p class="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">Suphuzi VPN</p>
+      <h1 class="mb-4 text-4xl font-extrabold leading-tight md:text-5xl">Support</h1>
+      <p class="max-w-3xl text-lg leading-8 text-slate-300">
+        Use this page for account, billing, server, and app support. Include concrete device and network details when reporting problems.
       </p>
-
-      <!-- Search Bar -->
-      <div class="max-w-2xl mx-auto mb-16">
-        <div class="relative">
-          <div class="absolute left-4 top-1/2 transform -translate-y-1/2">
-            <i data-lucide="search" class="w-5 h-5 text-gray-400"></i>
-          </div>
-          <input 
-            type="text" 
-            placeholder="Search for answers..." 
-            class="search-input w-full pl-12 pr-6 py-4 rounded-2xl text-white placeholder-gray-400 outline-none text-lg"
-            id="search-input"
-          >
-        </div>
-      </div>
-
-      <!-- Quick Stats -->
-      <div class="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
-        <div class="text-center">
-          <div class="text-3xl font-bold gradient-text">24/7</div>
-          <div class="text-sm text-gray-400 mt-1">Support Available</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl font-bold gradient-text">&lt;1hr</div>
-          <div class="text-sm text-gray-400 mt-1">Response Time</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl font-bold gradient-text">98%</div>
-          <div class="text-sm text-gray-400 mt-1">Satisfaction Rate</div>
-        </div>
-      </div>
+      <p class="mt-4 text-sm text-slate-400">Primary support email: <a class="text-cyan-300 hover:text-cyan-200" href="mailto:support@suphuzi.com">support@suphuzi.com</a></p>
     </div>
-  </section>
 
-  <!-- Quick Categories -->
-  <section class="py-24 px-6">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Browse by Category</h2>
-        <p class="text-xl text-gray-300 max-w-2xl mx-auto">Find quick answers to common questions organized by topic.</p>
-      </div>
+    <section class="grid gap-6 md:grid-cols-2">
+      <article class="glass rounded-3xl p-8">
+        <h2 class="mb-4 text-2xl font-bold">What to include</h2>
+        <ul class="list-disc space-y-2 pl-5 text-slate-300 leading-7">
+          <li>Device model and OS version</li>
+          <li>Whether the issue happens on Wi-Fi, mobile data, or both</li>
+          <li>The selected server or region</li>
+          <li>The plan tier or guest mode</li>
+          <li>A screenshot, crash text, or exact error message</li>
+          <li>The approximate time the issue happened</li>
+        </ul>
+      </article>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <a href="#getting-started" class="glass-morphism rounded-2xl p-8 card-hover group">
-          <div class="category-icon w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-            <i data-lucide="rocket" class="w-8 h-8 text-blue-400"></i>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">Getting Started</h3>
-          <p class="text-gray-300 leading-relaxed">Set up your VPN in minutes with our quick start guide and tutorials.</p>
-          <div class="mt-4 text-blue-400 font-medium flex items-center group-hover:translate-x-2 transition-transform">
-            Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-          </div>
-        </a>
-
-        <a href="#connection" class="glass-morphism rounded-2xl p-8 card-hover group">
-          <div class="category-icon w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-            <i data-lucide="wifi" class="w-8 h-8 text-purple-400"></i>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Connection Issues</h3>
-          <p class="text-gray-300 leading-relaxed">Troubleshoot connection problems and optimize your VPN performance.</p>
-          <div class="mt-4 text-purple-400 font-medium flex items-center group-hover:translate-x-2 transition-transform">
-            Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-          </div>
-        </a>
-
-        <a href="#billing" class="glass-morphism rounded-2xl p-8 card-hover group">
-          <div class="category-icon w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-            <i data-lucide="credit-card" class="w-8 h-8 text-green-400"></i>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-green-400 transition-colors">Billing & Plans</h3>
-          <p class="text-gray-300 leading-relaxed">Manage your subscription, payments, and plan upgrades or downgrades.</p>
-          <div class="mt-4 text-green-400 font-medium flex items-center group-hover:translate-x-2 transition-transform">
-            Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-          </div>
-        </a>
-
-        <a href="#privacy" class="glass-morphism rounded-2xl p-8 card-hover group">
-          <div class="category-icon w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-            <i data-lucide="lock" class="w-8 h-8 text-red-400"></i>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-red-400 transition-colors">Privacy & Security</h3>
-          <p class="text-gray-300 leading-relaxed">Learn how we protect your data and maintain your privacy.</p>
-          <div class="mt-4 text-red-400 font-medium flex items-center group-hover:translate-x-2 transition-transform">
-            Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-          </div>
-        </a>
-
-        <a href="#account" class="glass-morphism rounded-2xl p-8 card-hover group">
-          <div class="category-icon w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-            <i data-lucide="user" class="w-8 h-8 text-cyan-400"></i>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">Account</h3>
-          <p class="text-gray-300 leading-relaxed">Manage your account settings, preferences, and personal information.</p>
-          <div class="mt-4 text-cyan-400 font-medium flex items-center group-hover:translate-x-2 transition-transform">
-            Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-          </div>
-        </a>
-
-        <a href="#technical" class="glass-morphism rounded-2xl p-8 card-hover group">
-          <div class="category-icon w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-            <i data-lucide="settings" class="w-8 h-8 text-yellow-400"></i>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors">Technical Support</h3>
-          <p class="text-gray-300 leading-relaxed">Advanced troubleshooting and technical configuration guides.</p>
-          <div class="mt-4 text-yellow-400 font-medium flex items-center group-hover:translate-x-2 transition-transform">
-            Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Sections -->
-  <section class="py-24 px-6 border-t border-white/10">
-    <div class="max-w-4xl mx-auto">
-      
-      <!-- Getting Started -->
-      <div class="mb-16" id="getting-started">
-        <h2 class="text-3xl font-bold text-white mb-8 flex items-center">
-          <i data-lucide="rocket" class="w-8 h-8 text-blue-400 mr-3"></i>
-          Getting Started
-        </h2>
-
-        <div class="space-y-4">
-          <div class="glass-morphism rounded-2xl overflow-hidden faq-item">
-            <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
-              <div class="text-lg font-medium text-white">How do I connect to Suphuzi VPN?</div>
-              <i data-lucide="chevron-down" class="faq-arrow w-5 h-5 text-gray-400"></i>
-            </div>
-            <div class="faq-answer px-6 pb-6">
-              <p class="text-gray-300 leading-relaxed">
-                Open the app and tap the large power button on the home screen. The app will ask for VPN permission on first use — tap "Allow". The button will turn green when connected. That's it! You can also choose a specific server location by tapping "Servers" from the bottom navigation.
-              </p>
-            </div>
-          </div>
-
-          <div class="glass-morphism rounded-2xl overflow-hidden faq-item">
-            <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
-              <div class="text-lg font-medium text-white">Do I need to create an account?</div>
-              <i data-lucide="chevron-down" class="faq-arrow w-5 h-5 text-gray-400"></i>
-            </div>
-            <div class="faq-answer px-6 pb-6">
-              <p class="text-gray-300 leading-relaxed">
-                No. You can use Suphuzi VPN as a guest without any account. Simply tap "Continue as Guest" on the login screen. Guest accounts get 1GB of free bandwidth per month. Create an account to sync across devices or manage a subscription.
-              </p>
-            </div>
-          </div>
-
-          <div class="glass-morphism rounded-2xl overflow-hidden faq-item">
-            <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
-              <div class="text-lg font-medium text-white">How do I choose the best server?</div>
-              <i data-lucide="chevron-down" class="faq-arrow w-5 h-5 text-gray-400"></i>
-            </div>
-            <div class="faq-answer px-6 pb-6">
-              <p class="text-gray-300 leading-relaxed">
-                Tap "Servers" in the bottom navigation. The app automatically highlights the recommended server based on your location and current load. Green bars indicate low load and fastest speeds. You can also filter by region (Americas, Europe, Asia).
-              </p>
-            </div>
-          </div>
+      <article class="glass rounded-3xl p-8">
+        <h2 class="mb-4 text-2xl font-bold">Quick answers</h2>
+        <div class="space-y-4 text-slate-300 leading-7">
+          <p><strong>Guest access:</strong> You can use Suphuzi VPN without creating an account. Guest access currently includes a 500 MB usage allowance before upgrade is required.</p>
+          <p><strong>Billing:</strong> If you purchased through Google Play or the App Store, subscription management and store refunds are handled through that store.</p>
+          <p><strong>Connection help:</strong> If a connection fails, try a different server, confirm VPN permission is allowed, and tell support whether the problem affects Wi-Fi, mobile data, or both.</p>
         </div>
-      </div>
+      </article>
 
-      <!-- Connection Issues -->
-      <div class="mb-16" id="connection">
-        <h2 class="text-3xl font-bold text-white mb-8 flex items-center">
-          <i data-lucide="wifi" class="w-8 h-8 text-purple-400 mr-3"></i>
-          Connection Issues
-        </h2>
-
-        <div class="space-y-4">
-          <div class="glass-morphism rounded-2xl overflow-hidden faq-item">
-            <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
-              <div class="text-lg font-medium text-white">VPN won't connect — what should I do?</div>
-              <i data-lucide="chevron-down" class="faq-arrow w-5 h-5 text-gray-400"></i>
-            </div>
-            <div class="faq-answer px-6 pb-6">
-              <p class="text-gray-300 leading-relaxed">
-                Try these steps: 1) Check your internet connection is working. 2) Try a different server location. 3) Switch protocols in Settings → Protocol (try IKEv2 or OpenVPN). 4) Toggle airplane mode on/off. 5) Restart the app. If none of these work, contact our support team.
-              </p>
-            </div>
-          </div>
-
-          <div class="glass-morphism rounded-2xl overflow-hidden faq-item">
-            <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
-              <div class="text-lg font-medium text-white">My connection keeps dropping. How do I fix it?</div>
-              <i data-lucide="chevron-down" class="faq-arrow w-5 h-5 text-gray-400"></i>
-            </div>
-            <div class="faq-answer px-6 pb-6">
-              <p class="text-gray-300 leading-relaxed">
-                Enable Auto-connect in Settings → Connection. This automatically reconnects if the VPN drops. Also enable Kill Switch (Pro plan) to block traffic during reconnection, preventing any data leaks.
-              </p>
-            </div>
-          </div>
-
-          <div class="glass-morphism rounded-2xl overflow-hidden faq-item">
-            <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
-              <div class="text-lg font-medium text-white">My speeds are slow on the VPN. Why?</div>
-              <i data-lucide="chevron-down" class="faq-arrow w-5 h-5 text-gray-400"></i>
-            </div>
-            <div class="faq-answer px-6 pb-6">
-              <p class="text-gray-300 leading-relaxed">
-                Free plan speeds are limited to 10 Mbps. Upgrade to Pro for full-speed access. Also try: connecting to a server closer to your location, switching to WireGuard® protocol, or choosing a server with lower load percentage.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Billing -->
-      <div class="mb-16" id="billing">
-        <h2 class="text-3xl font-bold text-white mb-8 flex items-center">
-          <i data-lucide="credit-card" class="w-8 h-8 text-green-400 mr-3"></i>
-          Billing & Plans
-        </h2>
-
-        <div class="space-y-4">
-          <div class="glass-morphism rounded-2xl overflow-hidden faq-item">
-            <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
-              <div class="text-lg font-medium text-white">How do I upgrade to Pro or Ultra?</div>
-              <i data-lucide="chevron-down" class="faq-arrow w-5 h-5 text-gray-400"></i>
-            </div>
-            <div class="faq-answer px-6 pb-6">
-              <p class="text-gray-300 leading-relaxed">
-                Go to Settings → Account → Subscription, or tap any locked Pro feature and you'll see the upgrade prompt. Payment is processed securely through the App Store (iOS) or Google Play (Android).
-              </p>
-            </div>
-          </div>
-
-          <div class="glass-morphism rounded-2xl overflow-hidden faq-item">
-            <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
-              <div class="text-lg font-medium text-white">Can I pay with Bitcoin anonymously?</div>
-              <i data-lucide="chevron-down" class="faq-arrow w-5 h-5 text-gray-400"></i>
-            </div>
-            <div class="faq-answer px-6 pb-6">
-              <p class="text-gray-300 leading-relaxed">
-                Yes! Visit suphuzi.com/btcpay on our website to pay with Bitcoin, Ethereum, or USDC via BTCPay Server. No personal information required. After payment, you'll receive a license key to enter in Settings → Redeem Key.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Support -->
-  <section class="py-24 px-6 border-t border-white/10">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Still Need Help?</h2>
-        <p class="text-xl text-gray-300 max-w-2xl mx-auto">Our support team is here to help you 24/7.</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <div class="contact-card glass-morphism rounded-2xl p-8 featured">
-          <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mb-6">
-            <i data-lucide="mail" class="w-8 h-8 text-white"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-white mb-4">Email Support</h3>
-          <p class="text-gray-300 mb-6 leading-relaxed">
-            Send us a message and we'll get back to you within 24 hours. Include your device model and app version for faster help.
-          </p>
-          <a href="mailto:support@suphuzi.com" class="btn-primary px-6 py-3 rounded-full text-white font-semibold inline-flex items-center space-x-2">
-            <i data-lucide="send" class="w-4 h-4"></i>
-            <span>support@suphuzi.com</span>
-          </a>
-        </div>
-
-        <div class="contact-card glass-morphism rounded-2xl p-8">
-          <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mb-6">
-            <i data-lucide="message-circle" class="w-8 h-8 text-white"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-white mb-4">Live Chat</h3>
-          <p class="text-gray-300 mb-6 leading-relaxed">
-            Chat with our support team in real-time for immediate assistance with technical issues and account questions.
-          </p>
-          <button class="btn-secondary px-6 py-3 rounded-full text-white font-semibold inline-flex items-center space-x-2">
-            <i data-lucide="message-square" class="w-4 h-4"></i>
-            <span>Start Chat</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Additional Resources -->
-      <div class="mt-16 text-center">
-        <p class="text-gray-400 mb-8">Looking for more resources?</p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <a href="#" class="btn-secondary px-6 py-3 rounded-full text-white font-medium">User Guide</a>
-          <a href="#" class="btn-secondary px-6 py-3 rounded-full text-white font-medium">Video Tutorials</a>
-          <a href="#" class="btn-secondary px-6 py-3 rounded-full text-white font-medium">Community Forum</a>
-          <a href="#" class="btn-secondary px-6 py-3 rounded-full text-white font-medium">System Status</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="border-t border-white/10 py-16 px-6">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid md:grid-cols-4 gap-8 mb-12">
-        <div>
-          <div class="flex items-center space-x-3 mb-4">
-            <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-              <i data-lucide="shield" class="w-6 h-6 text-white"></i>
-            </div>
-            <span class="text-xl font-bold text-white">Suphuzi VPN</span>
-          </div>
-          <p class="text-gray-400 text-sm leading-relaxed">Military-grade privacy protection with RAM-only servers and zero logs.</p>
-        </div>
-
-        <div>
-          <h4 class="font-semibold text-white mb-4">Product</h4>
-          <ul class="space-y-2">
-            <li><a href="index.html#features" class="text-gray-400 hover:text-white transition-colors text-sm">Features</a></li>
-            <li><a href="index.html#security" class="text-gray-400 hover:text-white transition-colors text-sm">Security</a></li>
-            <li><a href="index.html#pricing" class="text-gray-400 hover:text-white transition-colors text-sm">Pricing</a></li>
-            <li><a href="index.html#download" class="text-gray-400 hover:text-white transition-colors text-sm">Download</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="font-semibold text-white mb-4">Support</h4>
-          <ul class="space-y-2">
-            <li><a href="support.html" class="text-gray-400 hover:text-white transition-colors text-sm">Help Center</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Contact Us</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Status</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Community</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="font-semibold text-white mb-4">Legal</h4>
-          <ul class="space-y-2">
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Cookie Policy</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">GDPR</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
-        <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2026 Suphuzi VPN. All rights reserved.</p>
-        <div class="flex space-x-6">
-          <a href="#" class="text-gray-400 hover:text-white transition-colors">
-            <i data-lucide="twitter" class="w-5 h-5"></i>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-white transition-colors">
-            <i data-lucide="github" class="w-5 h-5"></i>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-white transition-colors">
-            <i data-lucide="telegram" class="w-5 h-5"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Initialize Lucide icons
-    lucide.createIcons();
-
-    // Mobile menu toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    // FAQ functionality
-    document.querySelectorAll('.faq-question').forEach(question => {
-      question.addEventListener('click', () => {
-        const faqItem = question.parentElement;
-        const isOpen = faqItem.classList.contains('open');
-        
-        // Close all FAQ items
-        document.querySelectorAll('.faq-item').forEach(item => {
-          item.classList.remove('open');
-        });
-        
-        // Open clicked item if it wasn't open
-        if (!isOpen) {
-          faqItem.classList.add('open');
-        }
-      });
-    });
-
-    // Search functionality
-    const searchInput = document.getElementById('search-input');
-    searchInput.addEventListener('input', (e) => {
-      const searchTerm = e.target.value.toLowerCase();
-      const faqItems = document.querySelectorAll('.faq-item');
-      
-      faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question').textContent.toLowerCase();
-        const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
-        
-        if (question.includes(searchTerm) || answer.includes(searchTerm)) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    });
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-          // Close mobile menu if open
-          mobileMenu.classList.add('hidden');
-        }
-      });
-    });
-
-    // Add scroll effect to navigation
-    window.addEventListener('scroll', () => {
-      const nav = document.querySelector('nav');
-      if (window.scrollY > 50) {
-        nav.classList.add('bg-opacity-95');
-      } else {
-        nav.classList.remove('bg-opacity-95');
-      }
-    });
-  </script>
+      <article class="glass rounded-3xl p-8 md:col-span-2">
+        <h2 class="mb-4 text-2xl font-bold">Account deletion</h2>
+        <p class="mb-3 text-slate-300 leading-7">If you need to remove your account, use the in-app path <strong>Settings → Delete Account</strong>.</p>
+        <p class="text-slate-300 leading-7">If you cannot complete that flow, contact <a class="text-cyan-300 hover:text-cyan-200" href="mailto:support@suphuzi.com">support@suphuzi.com</a> from the email address on your account and use the subject <strong>Account Deletion Request</strong>.</p>
+      </article>
+    </section>
+  </main>
 </body>
 </html>
