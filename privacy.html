@@ -4,490 +4,107 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — Suphuzi VPN</title>
-  <meta name="description" content="Suphuzi VPN Privacy Policy - Learn about our commitment to your privacy and zero-log policy." />
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="../ui/web/icons/Icon-192.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../ui/web/icons/Icon-192.png">
-  <link rel="apple-touch-icon" href="../ui/web/icons/Icon-512.png">
-  
-  <!-- Fonts -->
+  <meta name="description" content="Privacy Policy for Suphuzi VPN." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=SF+Pro+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  
-  <!-- Tailwind CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  
   <style>
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #020617 0%, #111827 100%);
       color: #f8fafc;
-      overflow-x: hidden;
     }
-
-    .glass-morphism {
+    .glass {
       background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
-
-    .gradient-text {
-      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
+    .nav {
+      background: rgba(2, 6, 23, 0.82);
+      backdrop-filter: blur(18px);
+    }
+    .hero-line {
+      background: linear-gradient(90deg, #818cf8 0%, #22d3ee 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-
-    .nav-blur {
-      background: rgba(15, 23, 42, 0.8);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-      transition: all 0.3s ease;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      transition: all 0.3s ease;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: translateY(-2px);
-    }
   </style>
 </head>
 <body class="antialiased">
-  
-  <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-6 py-4">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center space-x-3">
-          <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-            <i data-lucide="shield" class="w-6 h-6 text-white"></i>
-          </div>
-          <span class="text-xl font-bold text-white">Suphuzi VPN</span>
-        </div>
-        
-        <div class="hidden md:flex items-center space-x-8">
-          <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a>
-          <a href="index.html#features" class="text-gray-300 hover:text-white transition-colors">Features</a>
-          <a href="index.html#security" class="text-gray-300 hover:text-white transition-colors">Security</a>
-          <a href="index.html#pricing" class="text-gray-300 hover:text-white transition-colors">Pricing</a>
-          <a href="support.html" class="text-gray-300 hover:text-white transition-colors">Support</a>
-        </div>
-
-        <button class="md:hidden text-white" id="mobile-menu-btn">
-          <i data-lucide="menu" class="w-6 h-6"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div class="hidden md:hidden absolute top-full left-0 right-0 glass-morphism border-t border-white/10" id="mobile-menu">
-      <div class="px-6 py-4 space-y-3">
-        <a href="index.html" class="block text-gray-300 hover:text-white transition-colors">Home</a>
-        <a href="index.html#features" class="block text-gray-300 hover:text-white transition-colors">Features</a>
-        <a href="index.html#security" class="block text-gray-300 hover:text-white transition-colors">Security</a>
-        <a href="index.html#pricing" class="block text-gray-300 hover:text-white transition-colors">Pricing</a>
-        <a href="support.html" class="block text-gray-300 hover:text-white transition-colors">Support</a>
+  <nav class="nav fixed inset-x-0 top-0 z-50 border-b border-white/10">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a href="index.html" class="text-xl font-bold text-white">Suphuzi VPN</a>
+      <div class="hidden gap-6 text-sm text-slate-300 md:flex">
+        <a href="index.html" class="hover:text-white">Home</a>
+        <a href="support.html" class="hover:text-white">Support</a>
+        <a href="company.html" class="hover:text-white">Company</a>
+        <a href="terms.html" class="hover:text-white">Terms</a>
+        <a href="account-deletion.html" class="hover:text-white">Account Deletion</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="min-h-screen flex items-center justify-center px-6 pt-20">
-    <div class="max-w-4xl mx-auto text-center">
-      <div class="inline-flex items-center space-x-2 glass-morphism px-4 py-2 rounded-full mb-8">
-        <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-        <span class="text-sm text-green-400 font-medium">Last Updated: March 2024</span>
-      </div>
-
-      <h1 class="text-5xl md:text-6xl font-bold mb-6">
-        <span class="block text-white">Your Privacy is</span>
-        <span class="gradient-text">Our Foundation</span>
-      </h1>
-
-      <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-        At Suphuzi VPN, privacy isn't just a feature—it's our core principle. This comprehensive privacy policy outlines our unwavering commitment to protecting your digital rights and maintaining your complete anonymity online.
+  <main class="mx-auto max-w-5xl px-6 pb-20 pt-28">
+    <div class="mb-10">
+      <p class="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">Suphuzi VPN</p>
+      <h1 class="mb-4 text-4xl font-extrabold leading-tight md:text-5xl">Privacy Policy</h1>
+      <p class="max-w-3xl text-lg leading-8 text-slate-300">
+        Suphuzi VPN keeps the operational data required to run the service, secure accounts, manage subscriptions, and maintain network stability. We do not sell personal data.
       </p>
-
-      <div class="grid md:grid-cols-3 gap-8 max-w-3xl mx-auto">
-        <div class="glass-morphism rounded-2xl p-6">
-          <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <i data-lucide="shield-off" class="w-6 h-6 text-white"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">Zero Logs Policy</h3>
-          <p class="text-gray-300 text-sm">We don't store your browsing history, connection logs, or personal data. Ever.</p>
-        </div>
-        <div class="glass-morphism rounded-2xl p-6">
-          <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <i data-lucide="cpu" class="w-6 h-6 text-white"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">RAM-Only Servers</h3>
-          <p class="text-gray-300 text-sm">All data exists only in volatile memory and vanishes when servers restart.</p>
-        </div>
-        <div class="glass-morphism rounded-2xl p-6">
-          <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <i data-lucide="globe" class="w-6 h-6 text-white"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">Privacy-Friendly Jurisdiction</h3>
-          <p class="text-gray-300 text-sm">Operated from jurisdictions that respect privacy and don't require data retention.</p>
-        </div>
-      </div>
+      <p class="mt-4 text-sm text-slate-400">Last updated: March 9, 2026</p>
     </div>
-  </section>
 
-  <!-- Privacy Policy Content -->
-  <section class="py-24 px-6 border-t border-white/10">
-    <div class="max-w-4xl mx-auto">
-      
-      <div class="glass-morphism rounded-2xl p-8 mb-8">
-        <h2 class="text-3xl font-bold text-white mb-6">1. Information We Don't Collect</h2>
-        <div class="space-y-4 text-gray-300 leading-relaxed">
-          <p>Suphuzi VPN operates under a strict zero-logs policy enforced at the infrastructure level. We fundamentally believe that privacy is a human right, and we've built our entire service around this principle:</p>
-          <ul class="list-disc list-inside space-y-2 ml-4">
-            <li><strong>No browsing history:</strong> We never track, store, or monitor which websites you visit, what content you access, or how long you spend online.</li>
-            <li><strong>No connection logs:</strong> We don't store your connection timestamps, original IP addresses, server locations, or session durations.</li>
-            <li><strong>No DNS queries:</strong> We don't log which domains you access through our VPN, ensuring complete browsing privacy.</li>
-            <li><strong>No bandwidth usage:</strong> We don't track how much data you transfer, when you transfer it, or what type of content you access.</li>
-            <li><strong>No personal identity:</strong> We don't require your real name, email address, phone number, or payment details for anonymous use.</li>
-            <li><strong>No device fingerprinting:</strong> We don't collect device information, browser fingerprints, or unique identifiers.</li>
-            <li><strong>No location tracking:</strong> We don't track your physical location, GPS coordinates, or movement patterns.</li>
-          </ul>
+    <section class="space-y-6">
+      <article class="glass rounded-3xl p-8">
+        <h2 class="mb-4 text-2xl font-bold">What We Collect</h2>
+        <div class="space-y-3 text-slate-300 leading-7">
+          <p>We may store your email address, account identifier, subscription tier, selected traffic profile, active device count, and billing status.</p>
+          <p>We may also process service diagnostics such as crash information, latency observations, connection state, selected server region, session start and end times, and customer support messages.</p>
         </div>
-      </div>
+      </article>
 
-      <div class="glass-morphism rounded-2xl p-8 mb-8">
-        <h2 class="text-3xl font-bold text-white mb-6">2. Information We Minimally Collect</h2>
-        <div class="space-y-4 text-gray-300 leading-relaxed">
-          <p>To provide our VPN service effectively, we collect only what's technically necessary for operation and security:</p>
-          <ul class="list-disc list-inside space-y-2 ml-4">
-            <li><strong>Anonymous usage metrics:</strong> Total active connections (no identifiers) for load balancing and server optimization.</li>
-            <li><strong>Server performance data:</strong> CPU usage, memory consumption, and network load for infrastructure maintenance.</li>
-            <li><strong>Optional account information:</strong> If you create an account, only an anonymous identifier and subscription status.</li>
-            <li><strong>Support requests:</strong> Only when you contact us, and only the information you voluntarily provide.</li>
-            <li><strong>Payment processing:</strong> Minimal payment information processed by third-party payment processors, not stored on our servers.</li>
-            <li><strong>App crash reports:</strong> Anonymous crash reports to improve app stability, containing no personal information.</li>
-          </ul>
+      <article class="glass rounded-3xl p-8">
+        <h2 class="mb-4 text-2xl font-bold">What We Do Not Inspect</h2>
+        <div class="space-y-3 text-slate-300 leading-7">
+          <p>Suphuzi VPN is built to route and protect traffic, not to read the content of your messages, files, or browsing sessions.</p>
+          <p>Operational metadata can still exist where it is needed for billing, fraud prevention, abuse controls, service troubleshooting, or legal obligations.</p>
         </div>
-      </div>
+      </article>
 
-      <div class="glass-morphism rounded-2xl p-8 mb-8">
-        <h2 class="text-3xl font-bold text-white mb-6">3. RAM-Only Infrastructure</h2>
-        <div class="space-y-4 text-gray-300 leading-relaxed">
-          <p>Our entire infrastructure runs on RAM-only servers, implementing the highest standard of data privacy:</p>
-          <ul class="list-disc list-inside space-y-2 ml-4">
-            <li><strong>No hard drives:</strong> Our servers have no persistent storage devices—no SSDs, no HDDs, no flash storage.</li>
-            <li><strong>Automatic data deletion:</strong> All data vanishes instantly when servers restart, lose power, or are shut down.</li>
-            <li><strong>No forensic recovery:</strong> Even with physical server access, no data can be recovered from volatile RAM memory.</li>
-            <li><strong>Regular reboots:</strong> Servers automatically reboot at regular intervals to ensure no data persistence.</li>
-            <li><strong>Diskless operation:</strong> Our servers boot from network images, eliminating any possibility of local data storage.</li>
-            <li><strong>Memory encryption:</strong> RAM contents are encrypted when possible to prevent cold boot attacks.</li>
-          </ul>
+      <article class="glass rounded-3xl p-8">
+        <h2 class="mb-4 text-2xl font-bold">How Data Is Used</h2>
+        <div class="space-y-3 text-slate-300 leading-7">
+          <p>We use collected data to authenticate users, enforce plan limits, establish VPN sessions, monitor server health, investigate abuse, and answer support requests.</p>
+          <p>Payments made through Google Play or the App Store are billed by those stores under their own payment terms and systems.</p>
         </div>
-      </div>
+      </article>
 
-      <div class="glass-morphism rounded-2xl p-8 mb-8">
-        <h2 class="text-3xl font-bold text-white mb-6">4. Anonymous Payments</h2>
-        <div class="space-y-4 text-gray-300 leading-relaxed">
-          <p>We support multiple anonymous payment methods to ensure your financial privacy:</p>
-          <ul class="list-disc list-inside space-y-2 ml-4">
-            <li><strong>Cryptocurrency payments:</strong> Bitcoin, Ethereum, Monero, and other privacy-focused cryptocurrencies via BTCPay Server.</li>
-            <li><strong>No KYC requirements:</strong> We don't require identity verification for cryptocurrency payments.</li>
-            <li><strong>Gift cards:</strong> Various prepaid gift cards for completely anonymous access without any financial trace.</li>
-            <li><strong>Cash options:</strong> Anonymous cash payment methods available in select regions through trusted partners.</li>
-            <li><strong>No payment tracking:</strong> We don't store payment details, transaction histories, or link payments to usage patterns.</li>
-            <li><strong>Third-party processors:</strong> When using credit cards, payment processing is handled by trusted third parties with PCI compliance.</li>
-          </ul>
+      <article class="glass rounded-3xl p-8">
+        <h2 class="mb-4 text-2xl font-bold">Sharing and Retention</h2>
+        <div class="space-y-3 text-slate-300 leading-7">
+          <p>We share data only with providers that are necessary to operate the service, such as infrastructure, analytics, payment, crash reporting, or support tools.</p>
+          <p>Account, billing, and security records may be retained for as long as reasonably necessary for legal, accounting, operational, or fraud-prevention purposes.</p>
         </div>
-      </div>
+      </article>
 
-      <div class="glass-morphism rounded-2xl p-8 mb-8">
-        <h2 class="text-3xl font-bold text-white mb-6">5. Legal Protection and Jurisdiction</h2>
-        <div class="space-y-4 text-gray-300 leading-relaxed">
-          <p>We're legally structured to protect your privacy in multiple ways:</p>
-          <ul class="list-disc list-inside space-y-2 ml-4">
-            <li><strong>Privacy-friendly jurisdictions:</strong> Operated from countries without mandatory data retention laws or surveillance alliances.</li>
-            <li><strong>No data to share:</strong> We legally cannot share what we don't collect or store—there's literally nothing to hand over.</li>
-            <li><strong>Independent audits:</strong> Regular third-party security audits verify our zero-log compliance and infrastructure security.</li>
-            <li><strong>Transparency reports:</strong> We publish transparency reports about government requests and our responses.</li>
-            <li><strong>Warrant canary:</strong> We maintain a warrant canary system to inform users about government surveillance attempts.</li>
-            <li><strong>Legal challenges:</strong> We actively fight against unlawful data requests and surveillance orders.</li>
-          </ul>
+      <article class="glass rounded-3xl p-8">
+        <h2 class="mb-4 text-2xl font-bold">Your Choices</h2>
+        <div class="space-y-3 text-slate-300 leading-7">
+          <p>You can request account deletion, change your subscription through the relevant app store, or contact support for privacy questions.</p>
+          <p>If you cannot complete deletion inside the app, email <a class="text-cyan-300 hover:text-cyan-200" href="mailto:support@suphuzi.com">support@suphuzi.com</a> with the subject <strong>Account Deletion Request</strong>.</p>
         </div>
-      </div>
+      </article>
 
-      <div class="glass-morphism rounded-2xl p-8 mb-8">
-        <h2 class="text-3xl font-bold text-white mb-6">6. Your Privacy Rights</h2>
-        <div class="space-y-4 text-gray-300 leading-relaxed">
-          <p>You have complete control over your data and privacy:</p>
-          <ul class="list-disc list-inside space-y-2 ml-4">
-            <li><strong>Right to access:</strong> Request any data we have about you (typically none, due to our zero-logs policy).</li>
-            <li><strong>Right to deletion:</strong> We can delete any data, though we don't store personal information by default.</li>
-            <li><strong>Right to portability:</strong> Export any account data you've voluntarily provided to us.</li>
-            <li><strong>Right to anonymity:</strong> Use our service completely anonymously as a guest without any registration.</li>
-            <li><strong>Right to correction:</strong> Update or correct any personal information you've provided to us.</li>
-            <li><strong>Right to restriction:</strong> Limit how we process any data you've voluntarily shared with us.</li>
-            <li><strong>Right to complaint:</strong> File complaints with privacy authorities about our data practices.</li>
-          </ul>
+      <article class="glass rounded-3xl p-8">
+        <h2 class="mb-4 text-2xl font-bold">Contact</h2>
+        <div class="space-y-2 text-slate-300 leading-7">
+          <p>Email: <a class="text-cyan-300 hover:text-cyan-200" href="mailto:support@suphuzi.com">support@suphuzi.com</a></p>
+          <p>Support page: <a class="text-cyan-300 hover:text-cyan-200" href="support.html">Support</a></p>
+          <p>Account deletion policy: <a class="text-cyan-300 hover:text-cyan-200" href="account-deletion.html">Account Deletion</a></p>
         </div>
-      </div>
-
-      <div class="glass-morphism rounded-2xl p-8 mb-8">
-        <h2 class="text-3xl font-bold text-white mb-6">7. Technical Security Measures</h2>
-        <div class="space-y-4 text-gray-300 leading-relaxed">
-          <p>We implement industry-leading technical security measures to protect your privacy:</p>
-          <ul class="list-disc list-inside space-y-2 ml-4">
-            <li><strong>WireGuard® protocol:</strong> Modern, state-of-the-art VPN protocol with minimal attack surface and maximum performance.</li>
-            <li><strong>Perfect Forward Secrecy:</strong> Every session uses unique, ephemeral encryption keys that are immediately discarded.</li>
-            <li><strong>DNS leak protection:</strong> All DNS queries are routed through the encrypted tunnel to prevent DNS leaks.</li>
-            <li><strong>IPv6 leak protection:</strong> Complete IPv6 leak protection to prevent any IP address exposure.</li>
-            <li><strong>Kill Switch:</strong> Blocks all internet traffic if the VPN connection drops unexpectedly, preventing data leaks.</li>
-            <li><strong>Split tunneling:</strong> Choose which apps use the VPN and which use your regular connection.</li>
-            <li><strong>Obfuscation technology:</strong> Advanced obfuscation to bypass VPN blocks and firewalls.</li>
-            <li><strong>Multi-hop connections:</strong> Route your traffic through multiple servers for enhanced anonymity.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="glass-morphism rounded-2xl p-8 mb-8">
-        <h2 class="text-3xl font-bold text-white mb-6">8. Third-Party Services</h2>
-        <div class="space-y-4 text-gray-300 leading-relaxed">
-          <p>We carefully select and audit third-party services to maintain your privacy:</p>
-          <ul class="list-disc list-inside space-y-2 ml-4">
-            <li><strong>Payment processors:</strong> PCI-compliant payment processors with strict data protection policies.</li>
-            <li><strong>Email services:</strong> Privacy-focused email providers for customer communications.</li>
-            <li><strong>Analytics:</strong> We don't use traditional analytics. Any metrics are completely anonymous and aggregated.</li>
-            <li><strong>CDN services:</strong> Privacy-focused CDN providers that don't track user behavior.</li>
-            <li><strong>Cloud infrastructure:</strong> Privacy-respecting cloud providers with strong security certifications.</li>
-            <li><strong>Security audits:</strong> Independent security firms that sign strict confidentiality agreements.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="glass-morphism rounded-2xl p-8 mb-8">
-        <h2 class="text-3xl font-bold text-white mb-6">9. Data Retention and Deletion</h2>
-        <div class="space-y-4 text-gray-300 leading-relaxed">
-          <p>Our data retention policy is simple: we don't retain data:</p>
-          <ul class="list-disc list-inside space-y-2 ml-4">
-            <li><strong>Zero retention period:</strong> User data is never stored, so there's no retention period.</li>
-            <li><strong>Immediate deletion:</strong> Any data that might be temporarily processed is deleted immediately.</li>
-            <li><strong>Automatic cleanup:</strong> Our systems automatically clean any temporary files or cache data.</li>
-            <li><strong>No backups:</strong> We don't create backups of user data, as we don't collect it in the first place.</li>
-            <li><strong>Server reboots:</strong> Regular server reboots ensure no data persists in memory.</li>
-            <li><strong>Account deletion:</strong> When you delete your account, all associated data is immediately removed.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="glass-morphism rounded-2xl p-8 mb-8">
-        <h2 class="text-3xl font-bold text-white mb-6">10. International Data Transfers</h2>
-        <div class="space-y-4 text-gray-300 leading-relaxed">
-          <p>Our global infrastructure ensures your privacy across borders:</p>
-          <ul class="list-disc list-inside space-y-2 ml-4">
-            <li><strong>Borderless privacy:</strong> Your data is protected regardless of which server location you choose.</li>
-            <li><strong>No data export:</strong> We don't export or transfer user data between jurisdictions.</li>
-            <li><strong>Local processing:</strong> All data processing happens locally on our servers without cross-border transfers.</li>
-            <li><strong>Global compliance:</strong> Our privacy practices exceed requirements in all jurisdictions we operate.</li>
-            <li><strong>Server location choice:</strong> You can choose which country's server to connect to for additional privacy control.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="glass-morphism rounded-2xl p-8 mb-8">
-        <h2 class="text-3xl font-bold text-white mb-6">11. Children's Privacy</h2>
-        <div class="space-y-4 text-gray-300 leading-relaxed">
-          <p>We take special care to protect children's privacy:</p>
-          <ul class="list-disc list-inside space-y-2 ml-4">
-            <li><strong>No age verification:</strong> We don't collect age information or verify user ages.</li>
-            <li><strong>Anonymous access:</strong> Our service is designed for anonymous use without personal information.</li>
-            <li><strong>No targeted content:</strong> We don't target content to specific age groups or demographics.</li>
-            <li><strong>Parental controls:</strong> Parents can use our service to protect their children's online privacy.</li>
-            <li><strong>Educational resources:</strong> We provide privacy education resources for all age groups.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="glass-morphism rounded-2xl p-8 mb-8">
-        <h2 class="text-3xl font-bold text-white mb-6">12. Policy Updates</h2>
-        <div class="space-y-4 text-gray-300 leading-relaxed">
-          <p>This privacy policy may occasionally be updated to reflect our evolving practices:</p>
-          <ul class="list-disc list-inside space-y-2 ml-4">
-            <li><strong>No reduction in protection:</strong> We will never reduce your privacy protections or collect more data.</li>
-            <li><strong>Clear notifications:</strong> Any changes will be clearly announced in-app, via email, and on our website.</li>
-            <li><strong>30-day notice:</strong> Major changes receive at least 30 days advance notice before implementation.</li>
-            <li><strong>Continuous improvement:</strong> Updates may add new protections or clarify existing privacy practices.</li>
-            <li><strong>User feedback:</strong> We consider user feedback when updating our privacy practices.</li>
-            <li><strong>Version history:</strong> We maintain a public history of privacy policy changes for transparency.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="glass-morphism rounded-2xl p-8">
-        <h2 class="text-3xl font-bold text-white mb-6">13. Contact and Questions</h2>
-        <div class="space-y-4 text-gray-300 leading-relaxed">
-          <p>If you have questions about this privacy policy or our privacy practices:</p>
-          <div class="space-y-3">
-            <p><strong>Primary Contact:</strong> <a href="mailto:antempostudios@gmail.com" class="text-blue-400 hover:text-blue-300">antempostudios@gmail.com</a></p>
-            <p><strong>Business/Legal Inquiries:</strong> <a href="mailto:kerem.newton571@gmail.com" class="text-blue-400 hover:text-blue-300">kerem.newton571@gmail.com</a></p>
-            <p><strong>PGP Key:</strong> Available on our website for encrypted communications and maximum privacy.</p>
-            <p><strong>Response Time:</strong> We respond to privacy inquiries within 48 hours during business days.</p>
-            <p><strong>Anonymous Contact:</strong> You can contact us anonymously through Tor, secure drop boxes, or encrypted messaging.</p>
-            <p><strong>Language Support:</strong> We offer privacy support in multiple languages to serve our global user base.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Trust Indicators -->
-  <section class="py-24 px-6 border-t border-white/10">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-white mb-4">Trusted by Privacy Advocates Worldwide</h2>
-        <p class="text-xl text-gray-300">Our commitment to privacy has been recognized by leading security experts and privacy organizations.</p>
-      </div>
-      
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="glass-morphism rounded-2xl p-6 text-center">
-          <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <i data-lucide="award" class="w-8 h-8 text-white"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">Independent Audited</h3>
-          <p class="text-gray-300 text-sm">Regular third-party security audits verify our zero-logs compliance</p>
-        </div>
-        
-        <div class="glass-morphism rounded-2xl p-6 text-center">
-          <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <i data-lucide="users" class="w-8 h-8 text-white"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">10M+ Users</h3>
-          <p class="text-gray-300 text-sm">Trusted by millions of users worldwide for their privacy needs</p>
-        </div>
-        
-        <div class="glass-morphism rounded-2xl p-6 text-center">
-          <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <i data-lucide="globe" class="w-8 h-8 text-white"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">50+ Countries</h3>
-          <p class="text-gray-300 text-sm">Global server network with privacy-friendly jurisdictions</p>
-        </div>
-        
-        <div class="glass-morphism rounded-2xl p-6 text-center">
-          <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <i data-lucide="shield-check" class="w-8 h-8 text-white"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">Military-Grade</h3>
-          <p class="text-gray-300 text-sm">AES-256 encryption with the highest security standards</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="border-t border-white/10 py-16 px-6">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid md:grid-cols-4 gap-8 mb-12">
-        <div>
-          <div class="flex items-center space-x-3 mb-4">
-            <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-              <i data-lucide="shield" class="w-6 h-6 text-white"></i>
-            </div>
-            <span class="text-xl font-bold text-white">Suphuzi VPN</span>
-          </div>
-          <p class="text-gray-400 text-sm leading-relaxed">Military-grade privacy protection with RAM-only servers and zero logs. Your privacy is our promise.</p>
-        </div>
-
-        <div>
-          <h4 class="font-semibold text-white mb-4">Product</h4>
-          <ul class="space-y-2">
-            <li><a href="index.html#features" class="text-gray-400 hover:text-white transition-colors text-sm">Features</a></li>
-            <li><a href="index.html#security" class="text-gray-400 hover:text-white transition-colors text-sm">Security</a></li>
-            <li><a href="index.html#pricing" class="text-gray-400 hover:text-white transition-colors text-sm">Pricing</a></li>
-            <li><a href="index.html#download" class="text-gray-400 hover:text-white transition-colors text-sm">Download</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="font-semibold text-white mb-4">Support</h4>
-          <ul class="space-y-2">
-            <li><a href="support.html" class="text-gray-400 hover:text-white transition-colors text-sm">Help Center</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Contact Us</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Status</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Community</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="font-semibold text-white mb-4">Legal</h4>
-          <ul class="space-y-2">
-            <li><a href="privacy.html" class="text-blue-400 hover:text-blue-300 text-sm">Privacy Policy</a></li>
-            <li><a href="terms.html" class="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Cookie Policy</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">GDPR</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
-        <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2024 Suphuzi VPN. All rights reserved.</p>
-        <div class="flex space-x-6">
-          <a href="#" class="text-gray-400 hover:text-white transition-colors">
-            <i data-lucide="twitter" class="w-5 h-5"></i>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-white transition-colors">
-            <i data-lucide="github" class="w-5 h-5"></i>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-white transition-colors">
-            <i data-lucide="telegram" class="w-5 h-5"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Initialize Lucide icons
-    lucide.createIcons();
-
-    // Mobile menu toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-          // Close mobile menu if open
-          mobileMenu.classList.add('hidden');
-        }
-      });
-    });
-  </script>
+      </article>
+    </section>
+  </main>
 </body>
 </html>

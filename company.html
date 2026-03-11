@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Company Overview — Suphuzi VPN</title>
+  <meta name="description" content="Company overview, infrastructure summary, and contact details for Suphuzi VPN." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #020617 0%, #111827 100%);
+      color: #f8fafc;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .nav {
+      background: rgba(2, 6, 23, 0.82);
+      backdrop-filter: blur(18px);
+    }
+    .accent {
+      background: linear-gradient(90deg, #8b5cf6 0%, #22d3ee 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <nav class="nav fixed inset-x-0 top-0 z-50 border-b border-white/10">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a href="index.html" class="text-xl font-bold text-white">Suphuzi VPN</a>
+      <div class="hidden gap-6 text-sm text-slate-300 md:flex">
+        <a href="index.html" class="hover:text-white">Home</a>
+        <a href="support.html" class="hover:text-white">Support</a>
+        <a href="privacy.html" class="hover:text-white">Privacy</a>
+        <a href="terms.html" class="hover:text-white">Terms</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="mx-auto max-w-6xl px-6 pb-20 pt-28">
+    <section class="mb-12">
+      <p class="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">Company Overview</p>
+      <h1 class="mb-5 max-w-4xl text-4xl font-extrabold leading-tight md:text-6xl">
+        Suphuzi VPN is building a <span class="accent">mobile privacy and secure connectivity</span> product on Google Cloud.
+      </h1>
+      <p class="max-w-3xl text-lg leading-8 text-slate-300">
+        This page is intended for platform reviewers, accelerator programs, cloud credit programs, and institutional partners that need a concise overview of the Suphuzi VPN product, operating model, and infrastructure footprint.
+      </p>
+    </section>
+
+    <section class="grid gap-6 md:grid-cols-3 mb-12">
+      <article class="glass rounded-3xl p-8">
+        <div class="mb-3 text-sm uppercase tracking-[0.18em] text-violet-300">Product</div>
+        <h2 class="mb-3 text-2xl font-bold">Consumer VPN app</h2>
+        <p class="text-slate-300 leading-7">Suphuzi VPN is an Android and iOS mobile application focused on encrypted VPN access, controlled server selection, guest access, subscription-based premium plans, and account-based session management.</p>
+      </article>
+      <article class="glass rounded-3xl p-8">
+        <div class="mb-3 text-sm uppercase tracking-[0.18em] text-cyan-300">Infrastructure</div>
+        <h2 class="mb-3 text-2xl font-bold">Google Cloud backbone</h2>
+        <p class="text-slate-300 leading-7">The service uses Google Cloud and Firebase for authentication, control-plane operations, backend APIs, observability, and multi-region infrastructure coordination.</p>
+      </article>
+      <article class="glass rounded-3xl p-8">
+        <div class="mb-3 text-sm uppercase tracking-[0.18em] text-emerald-300">Business model</div>
+        <h2 class="mb-3 text-2xl font-bold">B2C and B2B</h2>
+        <p class="text-slate-300 leading-7">The platform is designed for direct consumer subscriptions as well as future B2B voucher, hospitality, travel, and location-based access distribution models.</p>
+      </article>
+    </section>
+
+    <section class="grid gap-6 lg:grid-cols-2 mb-12">
+      <article class="glass rounded-3xl p-8">
+        <h2 class="mb-4 text-3xl font-bold">Current product scope</h2>
+        <ul class="list-disc space-y-2 pl-5 text-slate-300 leading-7">
+          <li>WireGuard-based VPN sessions</li>
+          <li>Guest access with limited usage allowance</li>
+          <li>Account-based access and subscription tiers</li>
+          <li>Split tunneling, kill switch, DNS protection settings</li>
+          <li>Regional server selection and quality scoring logic</li>
+          <li>In-app legal, support, and account deletion flows</li>
+        </ul>
+      </article>
+      <article class="glass rounded-3xl p-8">
+        <h2 class="mb-4 text-3xl font-bold">Cloud and backend stack</h2>
+        <ul class="list-disc space-y-2 pl-5 text-slate-300 leading-7">
+          <li>Firebase Authentication for guest and account sign-in</li>
+          <li>Cloud Firestore for app control-plane data</li>
+          <li>Google Cloud Run for backend API workloads</li>
+          <li>Google Compute Engine for VPN node operations</li>
+          <li>Google Play and App Store subscription billing paths</li>
+          <li>Operational monitoring, diagnostics, and service rollout support</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="grid gap-6 lg:grid-cols-2 mb-12">
+      <article class="glass rounded-3xl p-8">
+        <h2 class="mb-4 text-3xl font-bold">What this page is for</h2>
+        <div class="space-y-3 text-slate-300 leading-7">
+          <p>This page exists to give external reviewers a stable public reference for Suphuzi VPN when they need to verify that the project is an active product with a real infrastructure plan, public support contact, and documented operational pages.</p>
+          <p>It can be used in cloud credit applications, partnership forms, accelerator reviews, enterprise outreach, or vendor onboarding processes.</p>
+        </div>
+      </article>
+      <article class="glass rounded-3xl p-8">
+        <h2 class="mb-4 text-3xl font-bold">Operational contact</h2>
+        <div class="space-y-3 text-slate-300 leading-7">
+          <p><strong>Email:</strong> <a class="text-cyan-300 hover:text-cyan-200" href="mailto:support@suphuzi.com">support@suphuzi.com</a></p>
+          <p><strong>Support page:</strong> <a class="text-cyan-300 hover:text-cyan-200" href="support.html">support.html</a></p>
+          <p><strong>Privacy policy:</strong> <a class="text-cyan-300 hover:text-cyan-200" href="privacy.html">privacy.html</a></p>
+          <p><strong>Account deletion:</strong> <a class="text-cyan-300 hover:text-cyan-200" href="account-deletion.html">account-deletion.html</a></p>
+        </div>
+      </article>
+    </section>
+
+    <section class="glass rounded-3xl p-8">
+      <h2 class="mb-4 text-3xl font-bold">Short institutional summary</h2>
+      <p class="text-slate-300 leading-8">
+        Suphuzi VPN is a mobile privacy and secure connectivity startup using Google Cloud and Firebase for identity, backend coordination, and distributed infrastructure operations. The product is preparing for public mobile distribution with subscription-based monetization, guest access, policy-compliant legal pages, and a production-ready operational support surface under the suphuzi.com identity.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
