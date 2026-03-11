@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Suphuzi VPN Android Play Demo</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #050816;
+        --panel: rgba(15, 19, 40, 0.9);
+        --line: rgba(124, 92, 255, 0.25);
+        --text: #f5f7ff;
+        --muted: #a8adcc;
+        --accent: #7c5cff;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: radial-gradient(circle at top, rgba(124, 92, 255, 0.18), transparent 45%), var(--bg);
+        color: var(--text);
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+      main {
+        width: min(980px, 100%);
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 28px;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+      }
+      h1 { margin: 0 0 8px; font-size: clamp(32px, 4vw, 44px); }
+      p { margin: 0 0 20px; color: var(--muted); line-height: 1.6; }
+      video {
+        width: 100%;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: #000;
+      }
+      .meta {
+        margin-top: 16px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      a { color: var(--accent); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Suphuzi VPN Android Play Demo</h1>
+      <p>
+        Recorded demonstration of guest onboarding, server selection, VPN connect,
+        foreground service visibility, and disconnect flow for Google Play policy declarations.
+      </p>
+      <video controls preload="metadata">
+        <source src="/Suphuzi-VPN-Support/videos/android-play-demo.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="meta">
+        <span>Audience: Google Play policy review</span>
+        <span>Support: <a href="mailto:support@suphuzi.com">support@suphuzi.com</a></span>
+      </div>
+    </main>
+  </body>
+</html>
