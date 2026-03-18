@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suphuzi VPN — Secure Checkout</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://js.stripe.com/v3/"></script>
+  <style>
+    body { font-family: 'Inter', -apple-system, sans-serif; background: linear-gradient(135deg, #0f172a, #1e293b); color: #f8fafc; min-height: 100vh; }
+    .glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-6">
+  <div class="max-w-md w-full">
+    <div class="text-center mb-8">
+      <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h1 class="text-2xl font-bold text-white">Suphuzi VPN</h1>
+      <p class="text-gray-400 mt-1">Secure Checkout</p>
+    </div>
+
+    <div class="glass rounded-2xl p-8" id="checkout-container">
+      <div id="plan-info" class="mb-6">
+        <div class="flex justify-between items-center mb-4">
+          <span class="text-lg font-bold text-white" id="plan-name">Loading...</span>
+          <span class="text-2xl font-bold text-blue-400" id="plan-price"></span>
+        </div>
+        <div class="text-sm text-gray-400" id="plan-billing"></div>
+      </div>
+
+      <div class="space-y-4 mb-6">
+        <div>
+          <label class="text-sm text-gray-400 block mb-2">Payment Method</label>
+          <div class="flex gap-3">
+            <button onclick="selectMethod('card')" id="btn-card" class="flex-1 glass rounded-xl p-4 text-center cursor-pointer hover:border-blue-500/50 transition-all border-2 border-blue-500/50">
+              <div class="text-2xl mb-1">💳</div>
+              <div class="text-sm text-white">Card</div>
+            </button>
+            <button onclick="selectMethod('crypto')" id="btn-crypto" class="flex-1 glass rounded-xl p-4 text-center cursor-pointer hover:border-blue-500/50 transition-all border-2 border-transparent">
+              <div class="text-2xl mb-1">₿</div>
+              <div class="text-sm text-white">Crypto</div>
+            </button>
+            <button onclick="selectMethod('voucher')" id="btn-voucher" class="flex-1 glass rounded-xl p-4 text-center cursor-pointer hover:border-blue-500/50 transition-all border-2 border-transparent">
+              <div class="text-2xl mb-1">🎟</div>
+              <div class="text-sm text-white">Voucher</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card Payment (Stripe) -->
+        <div id="card-form" class="space-y-4">
+          <div>
+            <label class="text-sm text-gray-400 block mb-2">Email</label>
+            <input type="email" id="email" placeholder="you@example.com" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500">
+          </div>
+          <div>
+            <label class="text-sm text-gray-400 block mb-2">Card Details</label>
+            <div id="card-element" class="bg-white/5 border border-white/10 rounded-xl px-4 py-3"></div>
+            <div id="card-errors" class="text-red-400 text-sm mt-2"></div>
+          </div>
+        </div>
+
+        <!-- Crypto Payment -->
+        <div id="crypto-form" class="hidden space-y-4">
+          <div class="glass rounded-xl p-4 text-center">
+            <p class="text-gray-300 mb-3">Send payment to:</p>
+            <div class="bg-black/30 rounded-lg p-3 font-mono text-sm text-blue-400 break-all" id="crypto-address">
+              Configure BTCPay Server endpoint
+            </div>
+            <p class="text-xs text-gray-500 mt-3">Bitcoin, Lightning, Monero accepted</p>
+          </div>
+        </div>
+
+        <!-- Voucher -->
+        <div id="voucher-form" class="hidden space-y-4">
+          <div>
+            <label class="text-sm text-gray-400 block mb-2">Voucher Code</label>
+            <input type="text" id="voucher-code" placeholder="XXXX-XXXX-XXXX" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 uppercase tracking-widest text-center text-lg">
+          </div>
+        </div>
+      </div>
+
+      <button onclick="handleCheckout()" id="checkout-btn" class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-4 rounded-xl hover:opacity-90 transition-opacity">
+        Subscribe Now
+      </button>
+
+      <div class="flex items-center justify-center gap-4 mt-6 text-xs text-gray-500">
+        <span>🔒 SSL Encrypted</span>
+        <span>•</span>
+        <span>Cancel anytime</span>
+        <span>•</span>
+        <span>Instant activation</span>
+      </div>
+    </div>
+
+    <div id="success-container" class="hidden glass rounded-2xl p-8 text-center">
+      <div class="text-5xl mb-4">✅</div>
+      <h2 class="text-xl font-bold text-white mb-2">Payment Successful!</h2>
+      <p class="text-gray-400 mb-6">Your plan has been activated. Open the Suphuzi VPN app to start using your new plan.</p>
+      <a href="/" class="text-blue-400 hover:underline">Return to homepage</a>
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const plan = params.get('plan') || 'pro';
+    const plans = {
+      pro: { name: 'Pro', price: '$3.99', billing: 'per month' },
+      'pro-plus': { name: 'Pro+', price: '$5.99', billing: 'per month' },
+      ultra: { name: 'Ultra', price: '$7.99', billing: 'per month' },
+    };
+    const selected = plans[plan] || plans.pro;
+    document.getElementById('plan-name').textContent = selected.name + ' Plan';
+    document.getElementById('plan-price').textContent = selected.price;
+    document.getElementById('plan-billing').textContent = selected.billing;
+
+    let paymentMethod = 'card';
+
+    function selectMethod(method) {
+      paymentMethod = method;
+      ['card', 'crypto', 'voucher'].forEach(m => {
+        document.getElementById(`btn-${m}`).classList.toggle('border-blue-500/50', m === method);
+        document.getElementById(`btn-${m}`).classList.toggle('border-transparent', m !== method);
+        document.getElementById(`${m}-form`).classList.toggle('hidden', m !== method);
+      });
+      const btnText = method === 'voucher' ? 'Redeem Voucher' : method === 'crypto' ? 'Generate Payment Address' : 'Subscribe Now';
+      document.getElementById('checkout-btn').textContent = btnText;
+    }
+
+    // Stripe initialization (requires SUPHUZI_STRIPE_PK environment variable)
+    // For now, show placeholder
+    const stripeKey = 'pk_test_placeholder';
+    let stripe, cardElement;
+    try {
+      if (stripeKey && !stripeKey.includes('placeholder')) {
+        stripe = Stripe(stripeKey);
+        const elements = stripe.elements({ appearance: { theme: 'night' } });
+        cardElement = elements.create('card', {
+          style: { base: { color: '#f8fafc', fontSize: '16px', '::placeholder': { color: '#64748b' } } }
+        });
+        cardElement.mount('#card-element');
+      } else {
+        document.getElementById('card-element').innerHTML = '<p class="text-gray-500 text-sm">Stripe integration pending. Use voucher codes for now.</p>';
+      }
+    } catch(e) {
+      document.getElementById('card-element').innerHTML = '<p class="text-gray-500 text-sm">Payment processing setup in progress.</p>';
+    }
+
+    async function handleCheckout() {
+      const btn = document.getElementById('checkout-btn');
+      btn.disabled = true;
+      btn.textContent = 'Processing...';
+
+      if (paymentMethod === 'voucher') {
+        const code = document.getElementById('voucher-code').value.trim();
+        if (!code) { btn.disabled = false; btn.textContent = 'Redeem Voucher'; alert('Enter a voucher code'); return; }
+        // Voucher redemption would go through the app
+        alert('Please redeem voucher codes in the Suphuzi VPN app: Settings > Redeem Code');
+        btn.disabled = false;
+        btn.textContent = 'Redeem Voucher';
+        return;
+      }
+
+      if (paymentMethod === 'crypto') {
+        alert('Crypto payments coming soon. Use a voucher code or card payment.');
+        btn.disabled = false;
+        btn.textContent = 'Generate Payment Address';
+        return;
+      }
+
+      // Card payment via Stripe
+      if (!stripe) {
+        alert('Stripe is being configured. Please use voucher codes for now, or try again later.');
+        btn.disabled = false;
+        btn.textContent = 'Subscribe Now';
+        return;
+      }
+
+      // In production: create a payment intent on the backend, confirm here
+      btn.disabled = false;
+      btn.textContent = 'Subscribe Now';
+    }
+  </script>
+</body>
+</html>
