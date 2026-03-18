@@ -4,170 +4,51 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Suphuzi VPN — Premium Privacy Protection</title>
-  <meta name="description" content="Military-grade WireGuard® VPN with RAM-only servers, zero logs, and global coverage. Your privacy. Your rules." />
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="../ui/web/icons/Icon-192.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../ui/web/icons/Icon-192.png">
-  <link rel="apple-touch-icon" href="../ui/web/icons/Icon-512.png">
-  
+  <meta name="description" content="Military-grade WireGuard® VPN with RAM-only servers, zero logs, and global coverage across 7 countries. Available on Android, Windows, Linux, and macOS." />
+
+  <!-- Favicon (emoji-based inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡</text></svg>">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=SF+Pro+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
+
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  
+
   <style>
-    :root {
-      --background: 0 0% 100%;
-      --foreground: 222.2 84% 4.9%;
-      --card: 0 0% 100%;
-      --card-foreground: 222.2 84% 4.9%;
-      --popover: 0 0% 100%;
-      --popover-foreground: 222.2 84% 4.9%;
-      --primary: 221.2 83.2% 53.3%;
-      --primary-foreground: 210 40% 98%;
-      --secondary: 210 40% 96%;
-      --secondary-foreground: 222.2 84% 4.9%;
-      --muted: 210 40% 96%;
-      --muted-foreground: 215.4 16.3% 46.9%;
-      --accent: 210 40% 96%;
-      --accent-foreground: 222.2 84% 4.9%;
-      --destructive: 0 84.2% 60.2%;
-      --destructive-foreground: 210 40% 98%;
-      --border: 214.3 31.8% 91.4%;
-      --input: 214.3 31.8% 91.4%;
-      --ring: 221.2 83.2% 53.3%;
-      --radius: 0.75rem;
-    }
-
-    .dark {
-      --background: 222.2 84% 4.9%;
-      --foreground: 210 40% 98%;
-      --card: 222.2 84% 4.9%;
-      --card-foreground: 210 40% 98%;
-      --popover: 222.2 84% 4.9%;
-      --popover-foreground: 210 40% 98%;
-      --primary: 217.2 91.2% 59.8%;
-      --primary-foreground: 222.2 84% 4.9%;
-      --secondary: 217.2 32.6% 17.5%;
-      --secondary-foreground: 210 40% 98%;
-      --muted: 217.2 32.6% 17.5%;
-      --muted-foreground: 215 20.2% 65.1%;
-      --accent: 217.2 32.6% 17.5%;
-      --accent-foreground: 210 40% 98%;
-      --destructive: 0 62.8% 30.6%;
-      --destructive-foreground: 210 40% 98%;
-      --border: 217.2 32.6% 17.5%;
-      --input: 217.2 32.6% 17.5%;
-      --ring: 224.3 76.3% 94.1%;
-    }
-
-    * {
-      border-color: hsl(var(--border));
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
       color: #f8fafc;
       overflow-x: hidden;
     }
-
-    .glass-morphism {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .gradient-text {
-      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-gradient {
-      background: radial-gradient(ellipse at top, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-                  radial-gradient(ellipse at bottom, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
-    }
-
-    .card-hover {
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .card-hover:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    }
-
-    .float-animation {
-      animation: float 6s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
-    }
-
-    .pulse-animation {
-      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
-    }
-
-    .scroll-indicator {
-      animation: bounce 2s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-10px); }
-      60% { transform: translateY(-5px); }
-    }
-
-    .feature-icon {
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
-      border: 1px solid rgba(59, 130, 246, 0.2);
-    }
-
-    .nav-blur {
-      background: rgba(15, 23, 42, 0.8);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-      transition: all 0.3s ease;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      transition: all 0.3s ease;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: translateY(-2px);
-    }
+    .glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); }
+    .gradient-text { background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-glow { background: radial-gradient(ellipse at top, rgba(59,130,246,0.15) 0%, transparent 50%), radial-gradient(ellipse at bottom, rgba(139,92,246,0.1) 0%, transparent 50%); }
+    .card-hover { transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+    .nav-blur { background: rgba(15,23,42,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+    .btn-primary { background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); transition: all 0.3s ease; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(59,130,246,0.4); }
+    .btn-secondary { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease; }
+    .btn-secondary:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+    .feature-icon { background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(139,92,246,0.1)); border: 1px solid rgba(59,130,246,0.2); }
+    .pulse { animation: pulse 2s cubic-bezier(0.4,0,0.6,1) infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+    .bounce { animation: bounce 2s infinite; }
+    @keyframes bounce { 0%,20%,50%,80%,100%{transform:translateY(0)} 40%{transform:translateY(-10px)} 60%{transform:translateY(-5px)} }
+    .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .platform-icon { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 12px; font-size: 24px; }
   </style>
 </head>
 <body class="antialiased">
-  
+
   <!-- Navigation -->
   <nav class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-white/10">
     <div class="max-w-7xl mx-auto px-6 py-4">
@@ -178,51 +59,46 @@
           </div>
           <span class="text-xl font-bold text-white">Suphuzi VPN</span>
         </div>
-        
         <div class="hidden md:flex items-center space-x-8">
           <a href="#features" class="text-gray-300 hover:text-white transition-colors">Features</a>
           <a href="#security" class="text-gray-300 hover:text-white transition-colors">Security</a>
           <a href="#pricing" class="text-gray-300 hover:text-white transition-colors">Pricing</a>
+          <a href="#servers" class="text-gray-300 hover:text-white transition-colors">Servers</a>
           <a href="support.html" class="text-gray-300 hover:text-white transition-colors">Support</a>
           <a href="#download" class="btn-primary px-6 py-2 rounded-full text-white font-medium">Download</a>
         </div>
-
         <button class="md:hidden text-white" id="mobile-menu-btn">
           <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
       </div>
     </div>
-
-    <!-- Mobile Menu -->
-    <div class="hidden md:hidden absolute top-full left-0 right-0 glass-morphism border-t border-white/10" id="mobile-menu">
+    <div class="hidden md:hidden absolute top-full left-0 right-0 glass border-t border-white/10" id="mobile-menu">
       <div class="px-6 py-4 space-y-3">
-        <a href="#features" class="block text-gray-300 hover:text-white transition-colors">Features</a>
-        <a href="#security" class="block text-gray-300 hover:text-white transition-colors">Security</a>
-        <a href="#pricing" class="block text-gray-300 hover:text-white transition-colors">Pricing</a>
-        <a href="support.html" class="block text-gray-300 hover:text-white transition-colors">Support</a>
+        <a href="#features" class="block text-gray-300 hover:text-white">Features</a>
+        <a href="#security" class="block text-gray-300 hover:text-white">Security</a>
+        <a href="#pricing" class="block text-gray-300 hover:text-white">Pricing</a>
+        <a href="#servers" class="block text-gray-300 hover:text-white">Servers</a>
+        <a href="support.html" class="block text-gray-300 hover:text-white">Support</a>
         <a href="#download" class="btn-primary px-6 py-2 rounded-full text-white font-medium inline-block text-center">Download</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="min-h-screen flex items-center justify-center px-6 pt-20 hero-gradient">
+  <!-- Hero -->
+  <section class="min-h-screen flex items-center justify-center px-6 pt-20 hero-glow relative">
     <div class="max-w-7xl mx-auto text-center">
-      <div class="inline-flex items-center space-x-2 glass-morphism px-4 py-2 rounded-full mb-8">
-        <div class="w-2 h-2 bg-green-400 rounded-full pulse-animation"></div>
-        <span class="text-sm text-gray-300">Now available on iOS & Android</span>
+      <div class="inline-flex items-center space-x-2 glass px-4 py-2 rounded-full mb-8">
+        <div class="w-2 h-2 bg-green-400 rounded-full pulse"></div>
+        <span class="text-sm text-gray-300">Available on Android, Windows, Linux &amp; macOS</span>
       </div>
-
       <h1 class="text-5xl md:text-7xl font-bold mb-6">
         <span class="block text-white">The Last VPN</span>
         <span class="gradient-text">You'll Ever Need</span>
       </h1>
-
       <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-        Military-grade WireGuard® encryption. RAM-only servers.
-        Zero logs. Anonymous payments. Your privacy is not a feature — it's the foundation.
+        WireGuard® encryption on every platform. RAM-only servers across 4 continents.
+        Zero logs. Verified by real traffic tests. Your privacy is the foundation.
       </p>
-
       <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
         <a href="#download" class="btn-primary px-8 py-4 rounded-full text-white font-semibold text-lg inline-flex items-center justify-center space-x-2">
           <i data-lucide="download" class="w-5 h-5"></i>
@@ -233,99 +109,64 @@
           <i data-lucide="arrow-right" class="w-5 h-5"></i>
         </a>
       </div>
-
-      <!-- Stats -->
+      <!-- Real Stats -->
       <div class="grid grid-cols-2 md:grid-cols-5 gap-8 max-w-4xl mx-auto">
-        <div class="text-center">
-          <div class="text-3xl font-bold gradient-text">2ms</div>
-          <div class="text-sm text-gray-400 mt-1">Average Ping</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl font-bold gradient-text">50+</div>
-          <div class="text-sm text-gray-400 mt-1">Countries</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl font-bold gradient-text">10Gbps</div>
-          <div class="text-sm text-gray-400 mt-1">Server Bandwidth</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl font-bold gradient-text">0</div>
-          <div class="text-sm text-gray-400 mt-1">Logs Stored</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl font-bold gradient-text">99.9%</div>
-          <div class="text-sm text-gray-400 mt-1">Uptime</div>
-        </div>
+        <div class="text-center"><div class="text-3xl font-bold gradient-text">&lt;35ms</div><div class="text-sm text-gray-400 mt-1">EU Avg Ping</div></div>
+        <div class="text-center"><div class="text-3xl font-bold gradient-text">7</div><div class="text-sm text-gray-400 mt-1">Server Locations</div></div>
+        <div class="text-center"><div class="text-3xl font-bold gradient-text">1Gbps</div><div class="text-sm text-gray-400 mt-1">Per Server</div></div>
+        <div class="text-center"><div class="text-3xl font-bold gradient-text">0</div><div class="text-sm text-gray-400 mt-1">Logs Stored</div></div>
+        <div class="text-center"><div class="text-3xl font-bold gradient-text">99.9%</div><div class="text-sm text-gray-400 mt-1">Uptime</div></div>
       </div>
     </div>
-
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 scroll-indicator">
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 bounce">
       <i data-lucide="chevron-down" class="w-6 h-6 text-gray-400"></i>
     </div>
   </section>
 
-  <!-- Features Section -->
+  <!-- Features -->
   <section class="py-24 px-6" id="features">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
         <div class="inline-block text-sm font-semibold text-blue-400 mb-4">Why Suphuzi</div>
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Built Different.<br/>Built for You.</h2>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Built Different. Built for You.</h2>
         <p class="text-xl text-gray-300 max-w-2xl mx-auto">Every detail engineered for maximum privacy, speed, and simplicity.</p>
       </div>
-
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="glass-morphism rounded-2xl p-8 card-hover">
-          <div class="feature-icon w-14 h-14 rounded-xl flex items-center justify-center mb-6">
-            <i data-lucide="zap" class="w-7 h-7 text-blue-400"></i>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-3">WireGuard® Protocol</h3>
-          <p class="text-gray-300 leading-relaxed">3× faster than OpenVPN. Only 4,000 lines of code vs 600,000 — less code means fewer vulnerabilities and blazing-fast connections.</p>
+        <div class="glass rounded-2xl p-8 card-hover fade-up">
+          <div class="feature-icon w-14 h-14 rounded-xl flex items-center justify-center mb-6"><i data-lucide="zap" class="w-7 h-7 text-blue-400"></i></div>
+          <h3 class="text-xl font-bold text-white mb-3">WireGuard® on All Plans</h3>
+          <p class="text-gray-300 leading-relaxed">Every user gets WireGuard® — even on the free plan. 3x faster than OpenVPN with only 4,000 lines of auditable code.</p>
         </div>
-
-        <div class="glass-morphism rounded-2xl p-8 card-hover">
-          <div class="feature-icon w-14 h-14 rounded-xl flex items-center justify-center mb-6">
-            <i data-lucide="cpu" class="w-7 h-7 text-purple-400"></i>
-          </div>
+        <div class="glass rounded-2xl p-8 card-hover fade-up">
+          <div class="feature-icon w-14 h-14 rounded-xl flex items-center justify-center mb-6"><i data-lucide="cpu" class="w-7 h-7 text-purple-400"></i></div>
           <h3 class="text-xl font-bold text-white mb-3">RAM-Only Servers</h3>
-          <p class="text-gray-300 leading-relaxed">Our servers run entirely on RAM. When powered off, every byte vanishes permanently. No hard drives. No forensic traces. Ever.</p>
+          <p class="text-gray-300 leading-relaxed">Servers run entirely in RAM. Power off = all data gone. No hard drives, no forensic traces, no exceptions.</p>
         </div>
-
-        <div class="glass-morphism rounded-2xl p-8 card-hover">
-          <div class="feature-icon w-14 h-14 rounded-xl flex items-center justify-center mb-6">
-            <i data-lucide="globe" class="w-7 h-7 text-green-400"></i>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-3">Auto Nearest Server</h3>
-          <p class="text-gray-300 leading-relaxed">Powered by Firebase's global edge network — your connection automatically routes to the nearest server for the lowest possible latency.</p>
+        <div class="glass rounded-2xl p-8 card-hover fade-up">
+          <div class="feature-icon w-14 h-14 rounded-xl flex items-center justify-center mb-6"><i data-lucide="monitor" class="w-7 h-7 text-green-400"></i></div>
+          <h3 class="text-xl font-bold text-white mb-3">All Platforms</h3>
+          <p class="text-gray-300 leading-relaxed">Android, Windows, Linux, macOS — one account, all devices. iOS coming soon. Native apps, no browser extensions needed.</p>
         </div>
-
-        <div class="glass-morphism rounded-2xl p-8 card-hover">
-          <div class="feature-icon w-14 h-14 rounded-xl flex items-center justify-center mb-6">
-            <i data-lucide="shield-off" class="w-7 h-7 text-red-400"></i>
-          </div>
+        <div class="glass rounded-2xl p-8 card-hover fade-up">
+          <div class="feature-icon w-14 h-14 rounded-xl flex items-center justify-center mb-6"><i data-lucide="shield-off" class="w-7 h-7 text-red-400"></i></div>
           <h3 class="text-xl font-bold text-white mb-3">Kill Switch</h3>
-          <p class="text-gray-300 leading-relaxed">If the VPN drops for even a millisecond, all internet traffic is instantly blocked. Your real IP never leaks. Not even once.</p>
+          <p class="text-gray-300 leading-relaxed">VPN drops? All traffic is instantly blocked. Your real IP never leaks. Kernel-level enforcement on Android and Linux.</p>
         </div>
-
-        <div class="glass-morphism rounded-2xl p-8 card-hover">
-          <div class="feature-icon w-14 h-14 rounded-xl flex items-center justify-center mb-6">
-            <i data-lucide="bitcoin" class="w-7 h-7 text-yellow-400"></i>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-3">Anonymous Payments</h3>
-          <p class="text-gray-300 leading-relaxed">Pay with Bitcoin via BTCPay Server. No credit card. No bank record. No name. Your subscription is as private as your connection.</p>
+        <div class="glass rounded-2xl p-8 card-hover fade-up">
+          <div class="feature-icon w-14 h-14 rounded-xl flex items-center justify-center mb-6"><i data-lucide="eye-off" class="w-7 h-7 text-yellow-400"></i></div>
+          <h3 class="text-xl font-bold text-white mb-3">Verified Zero Logs</h3>
+          <p class="text-gray-300 leading-relaxed">We don't just claim zero logs — our RAM-only infrastructure makes it physically impossible to store them.</p>
         </div>
-
-        <div class="glass-morphism rounded-2xl p-8 card-hover">
-          <div class="feature-icon w-14 h-14 rounded-xl flex items-center justify-center mb-6">
-            <i data-lucide="languages" class="w-7 h-7 text-cyan-400"></i>
-          </div>
+        <div class="glass rounded-2xl p-8 card-hover fade-up">
+          <div class="feature-icon w-14 h-14 rounded-xl flex items-center justify-center mb-6"><i data-lucide="languages" class="w-7 h-7 text-cyan-400"></i></div>
           <h3 class="text-xl font-bold text-white mb-3">14 Languages</h3>
-          <p class="text-gray-300 leading-relaxed">The app speaks your language automatically. Turkish, Chinese, Japanese, Arabic, Russian, and 9 more — from the very first launch.</p>
+          <p class="text-gray-300 leading-relaxed">Turkish, English, Chinese, Japanese, Arabic, Russian, Hindi, and 7 more — auto-detected from first launch.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Security Section -->
+  <!-- Security -->
   <section class="py-24 px-6 border-t border-white/10" id="security">
     <div class="max-w-7xl mx-auto">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
@@ -333,72 +174,40 @@
           <div class="inline-block text-sm font-semibold text-blue-400 mb-4">Protocol</div>
           <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Encryption that<br/>governments use.</h2>
           <p class="text-lg text-gray-300 mb-8 leading-relaxed">
-            WireGuard® uses ChaCha20-Poly1305 — the same cryptography trusted by security agencies worldwide. Combined with Perfect Forward Secrecy, your sessions are mathematically impossible to decrypt, even retroactively.
+            ChaCha20-Poly1305 encryption with Perfect Forward Secrecy. Every session gets unique keys — even if one is compromised, past and future sessions remain secure.
           </p>
-          
-          <div class="inline-flex items-center space-x-2 glass-morphism px-4 py-2 rounded-full mb-8">
+          <div class="inline-flex items-center space-x-2 glass px-4 py-2 rounded-full mb-8">
             <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-            <span class="text-sm text-green-400 font-medium">RAM-Only Infrastructure</span>
+            <span class="text-sm text-green-400 font-medium">IP Leak Test: PASSED</span>
           </div>
-
-          <div class="glass-morphism rounded-2xl overflow-hidden">
+          <div class="glass rounded-2xl overflow-hidden">
             <table class="w-full">
-              <thead>
-                <tr class="border-b border-white/10">
-                  <th class="text-left p-4 text-gray-400 font-medium">Metric</th>
-                  <th class="text-left p-4 text-blue-400 font-medium">Suphuzi VPN</th>
-                  <th class="text-left p-4 text-gray-400 font-medium">Others</th>
-                </tr>
-              </thead>
+              <thead><tr class="border-b border-white/10">
+                <th class="text-left p-4 text-gray-400 font-medium">Metric</th>
+                <th class="text-left p-4 text-blue-400 font-medium">Suphuzi</th>
+                <th class="text-left p-4 text-gray-400 font-medium">Typical VPN</th>
+              </tr></thead>
               <tbody>
-                <tr class="border-b border-white/5">
-                  <td class="p-4 text-gray-300">Protocol</td>
-                  <td class="p-4 text-green-400 font-medium">WireGuard®</td>
-                  <td class="p-4 text-yellow-400">OpenVPN</td>
-                </tr>
-                <tr class="border-b border-white/5">
-                  <td class="p-4 text-gray-300">Avg Ping</td>
-                  <td class="p-4 text-green-400 font-medium">2ms</td>
-                  <td class="p-4 text-red-400">40ms+</td>
-                </tr>
-                <tr class="border-b border-white/5">
-                  <td class="p-4 text-gray-300">Code Size</td>
-                  <td class="p-4 text-green-400 font-medium">4,000 lines</td>
-                  <td class="p-4 text-red-400">600,000 lines</td>
-                </tr>
-                <tr>
-                  <td class="p-4 text-gray-300">Server Logs</td>
-                  <td class="p-4 text-green-400 font-medium">Zero (RAM)</td>
-                  <td class="p-4 text-red-400">Disk stored</td>
-                </tr>
+                <tr class="border-b border-white/5"><td class="p-4 text-gray-300">Protocol</td><td class="p-4 text-green-400 font-medium">WireGuard®</td><td class="p-4 text-yellow-400">OpenVPN</td></tr>
+                <tr class="border-b border-white/5"><td class="p-4 text-gray-300">EU Avg Ping</td><td class="p-4 text-green-400 font-medium">&lt;35ms</td><td class="p-4 text-red-400">80ms+</td></tr>
+                <tr class="border-b border-white/5"><td class="p-4 text-gray-300">Codebase</td><td class="p-4 text-green-400 font-medium">4,000 lines</td><td class="p-4 text-red-400">600,000 lines</td></tr>
+                <tr class="border-b border-white/5"><td class="p-4 text-gray-300">Server Logs</td><td class="p-4 text-green-400 font-medium">Zero (RAM)</td><td class="p-4 text-red-400">Disk stored</td></tr>
+                <tr><td class="p-4 text-gray-300">IP Leak Test</td><td class="p-4 text-green-400 font-medium">Verified</td><td class="p-4 text-yellow-400">Varies</td></tr>
               </tbody>
             </table>
           </div>
         </div>
-
         <div class="relative">
-          <div class="glass-morphism rounded-2xl p-8 h-96 flex items-center justify-center">
+          <div class="glass rounded-2xl p-8 h-96 flex items-center justify-center">
             <div class="relative w-full h-full">
               <div class="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 transform -translate-y-1/2"></div>
-              
-              <div class="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-2 glass-morphism px-4 py-2 rounded-lg text-sm text-gray-300">
-                📱 Your Device
-              </div>
-              
-              <div class="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-2 glass-morphism px-4 py-2 rounded-lg text-sm text-gray-300">
-                🌐 Internet
-              </div>
-              
-              <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 glass-morphism px-6 py-4 rounded-xl text-center">
+              <div class="absolute top-1/2 left-4 transform -translate-y-1/2 glass px-4 py-2 rounded-lg text-sm text-gray-300">Your Device</div>
+              <div class="absolute top-1/2 right-4 transform -translate-y-1/2 glass px-4 py-2 rounded-lg text-sm text-gray-300">Internet</div>
+              <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 glass px-6 py-4 rounded-xl text-center">
                 <div class="text-xs text-gray-400 mb-1">Encrypted Tunnel</div>
-                <div class="gradient-text font-bold">WireGuard®</div>
+                <div class="gradient-text font-bold text-lg">WireGuard®</div>
                 <div class="text-xs text-gray-400 mt-1">ChaCha20-Poly1305</div>
               </div>
-
-              <!-- Animated packets -->
-              <div class="absolute top-1/2 transform -translate-y-1/2 w-2 h-2 bg-blue-400 rounded-full float-animation"></div>
-              <div class="absolute top-1/2 transform -translate-y-1/2 w-2 h-2 bg-purple-400 rounded-full float-animation" style="animation-delay: 0.7s;"></div>
-              <div class="absolute top-1/2 transform -translate-y-1/2 w-2 h-2 bg-cyan-400 rounded-full float-animation" style="animation-delay: 1.4s;"></div>
             </div>
           </div>
         </div>
@@ -406,155 +215,175 @@
     </div>
   </section>
 
-  <!-- Pricing Section -->
+  <!-- Server Locations -->
+  <section class="py-24 px-6 border-t border-white/10" id="servers">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <div class="inline-block text-sm font-semibold text-blue-400 mb-4">Infrastructure</div>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Global Server Network</h2>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">7 servers across 4 continents. DigitalOcean + Google Cloud for maximum reliability.</p>
+      </div>
+      <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div class="glass rounded-xl p-6 text-center card-hover fade-up">
+          <div class="text-3xl mb-3">🇩🇪</div>
+          <div class="font-bold text-white">Frankfurt</div>
+          <div class="text-sm text-gray-400">Germany</div>
+          <div class="text-green-400 text-sm mt-2 font-medium">~35ms</div>
+        </div>
+        <div class="glass rounded-xl p-6 text-center card-hover fade-up">
+          <div class="text-3xl mb-3">🇺🇸</div>
+          <div class="font-bold text-white">New York</div>
+          <div class="text-sm text-gray-400">United States</div>
+          <div class="text-green-400 text-sm mt-2 font-medium">~110ms</div>
+        </div>
+        <div class="glass rounded-xl p-6 text-center card-hover fade-up">
+          <div class="text-3xl mb-3">🇸🇬</div>
+          <div class="font-bold text-white">Singapore</div>
+          <div class="text-sm text-gray-400">Singapore</div>
+          <div class="text-green-400 text-sm mt-2 font-medium">~170ms</div>
+        </div>
+        <div class="glass rounded-xl p-6 text-center card-hover fade-up">
+          <div class="text-3xl mb-3">🇺🇸</div>
+          <div class="font-bold text-white">South Carolina</div>
+          <div class="text-sm text-gray-400">United States</div>
+          <div class="text-green-400 text-sm mt-2 font-medium">~130ms</div>
+        </div>
+        <div class="glass rounded-xl p-6 text-center card-hover fade-up">
+          <div class="text-3xl mb-3">🇩🇪</div>
+          <div class="font-bold text-white">Frankfurt</div>
+          <div class="text-sm text-gray-400">Google Cloud</div>
+          <div class="text-green-400 text-sm mt-2 font-medium">~40ms</div>
+        </div>
+        <div class="glass rounded-xl p-6 text-center card-hover fade-up">
+          <div class="text-3xl mb-3">🇸🇬</div>
+          <div class="font-bold text-white">Singapore</div>
+          <div class="text-sm text-gray-400">Google Cloud</div>
+          <div class="text-green-400 text-sm mt-2 font-medium">~175ms</div>
+        </div>
+        <div class="glass rounded-xl p-6 text-center card-hover fade-up">
+          <div class="text-3xl mb-3">🇧🇷</div>
+          <div class="font-bold text-white">Sao Paulo</div>
+          <div class="text-sm text-gray-400">Brazil</div>
+          <div class="text-green-400 text-sm mt-2 font-medium">~230ms</div>
+        </div>
+        <div class="glass rounded-xl p-6 text-center card-hover fade-up border border-blue-500/30">
+          <div class="text-3xl mb-3">🌍</div>
+          <div class="font-bold text-blue-400">Expanding</div>
+          <div class="text-sm text-gray-400">More coming Q2 2026</div>
+          <div class="text-blue-400 text-sm mt-2 font-medium">Soon</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
   <section class="py-24 px-6 border-t border-white/10" id="pricing">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
         <div class="inline-block text-sm font-semibold text-blue-400 mb-4">Plans</div>
         <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Simple, Honest Pricing.</h2>
-        <p class="text-xl text-gray-300 max-w-2xl mx-auto">No hidden fees. Cancel anytime. Upgrade or downgrade instantly.</p>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">No hidden fees. Cancel anytime. WireGuard® included on every plan.</p>
       </div>
-
       <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        <div class="glass-morphism rounded-2xl p-8 card-hover">
+        <!-- Free -->
+        <div class="glass rounded-2xl p-8 card-hover fade-up">
           <div class="text-center mb-8">
             <div class="text-sm font-medium text-gray-400 mb-2">Free</div>
             <div class="text-4xl font-bold text-white mb-2">$0</div>
             <div class="text-sm text-gray-400">forever</div>
           </div>
           <ul class="space-y-3 mb-8">
-            <li class="flex items-center space-x-3">
-              <i data-lucide="check" class="w-5 h-5 text-green-400"></i>
-              <span class="text-gray-300">1 GB / month bandwidth</span>
-            </li>
-            <li class="flex items-center space-x-3">
-              <i data-lucide="check" class="w-5 h-5 text-green-400"></i>
-              <span class="text-gray-300">10 server locations</span>
-            </li>
-            <li class="flex items-center space-x-3">
-              <i data-lucide="check" class="w-5 h-5 text-green-400"></i>
-              <span class="text-gray-300">OpenVPN protocol</span>
-            </li>
-            <li class="flex items-center space-x-3">
-              <i data-lucide="check" class="w-5 h-5 text-green-400"></i>
-              <span class="text-gray-300">Basic DNS protection</span>
-            </li>
-            <li class="flex items-center space-x-3">
-              <i data-lucide="x" class="w-5 h-5 text-gray-500"></i>
-              <span class="text-gray-500">Kill Switch</span>
-            </li>
-            <li class="flex items-center space-x-3">
-              <i data-lucide="x" class="w-5 h-5 text-gray-500"></i>
-              <span class="text-gray-500">WireGuard® protocol</span>
-            </li>
+            <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-green-400 shrink-0"></i><span class="text-gray-300">500 MB / month</span></li>
+            <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-green-400 shrink-0"></i><span class="text-gray-300">All 7 server locations</span></li>
+            <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-green-400 shrink-0"></i><span class="text-gray-300">WireGuard® protocol</span></li>
+            <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-green-400 shrink-0"></i><span class="text-gray-300">DNS leak protection</span></li>
+            <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-green-400 shrink-0"></i><span class="text-gray-300">Watch ads for +100 MB</span></li>
+            <li class="flex items-center space-x-3"><i data-lucide="x" class="w-5 h-5 text-gray-600 shrink-0"></i><span class="text-gray-500">Kill Switch</span></li>
           </ul>
           <a href="#download" class="btn-secondary w-full py-3 rounded-full text-white font-semibold text-center block">Get Started Free</a>
         </div>
-
-        <div class="glass-morphism rounded-2xl p-8 card-hover border-2 border-blue-500/50 relative">
-          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-1 rounded-full text-sm font-medium">
-            Most Popular
-          </div>
+        <!-- Pro -->
+        <div class="glass rounded-2xl p-8 card-hover fade-up border-2 border-blue-500/50 relative">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-1 rounded-full text-sm font-medium">Most Popular</div>
           <div class="text-center mb-8">
             <div class="text-sm font-medium text-gray-400 mb-2">Pro</div>
-            <div class="text-4xl font-bold gradient-text mb-2">$4.99</div>
+            <div class="text-4xl font-bold gradient-text mb-2">$3.99</div>
             <div class="text-sm text-gray-400">per month</div>
           </div>
           <ul class="space-y-3 mb-8">
-            <li class="flex items-center space-x-3">
-              <i data-lucide="check" class="w-5 h-5 text-green-400"></i>
-              <span class="text-gray-300">Unlimited bandwidth</span>
-            </li>
-            <li class="flex items-center space-x-3">
-              <i data-lucide="check" class="w-5 h-5 text-green-400"></i>
-              <span class="text-gray-300">100+ server locations</span>
-            </li>
-            <li class="flex items-center space-x-3">
-              <i data-lucide="check" class="w-5 h-5 text-green-400"></i>
-              <span class="text-gray-300">WireGuard® protocol</span>
-            </li>
-            <li class="flex items-center space-x-3">
-              <i data-lucide="check" class="w-5 h-5 text-green-400"></i>
-              <span class="text-gray-300">Kill Switch (kernel-level)</span>
-            </li>
-            <li class="flex items-center space-x-3">
-              <i data-lucide="check" class="w-5 h-5 text-green-400"></i>
-              <span class="text-gray-300">RAM-only servers</span>
-            </li>
-            <li class="flex items-center space-x-3">
-              <i data-lucide="check" class="w-5 h-5 text-green-400"></i>
-              <span class="text-gray-300">5 simultaneous devices</span>
-            </li>
+            <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-green-400 shrink-0"></i><span class="text-gray-300">Unlimited bandwidth</span></li>
+            <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-green-400 shrink-0"></i><span class="text-gray-300">All server locations</span></li>
+            <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-green-400 shrink-0"></i><span class="text-gray-300">WireGuard® protocol</span></li>
+            <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-green-400 shrink-0"></i><span class="text-gray-300">Kill Switch</span></li>
+            <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-green-400 shrink-0"></i><span class="text-gray-300">5 simultaneous devices</span></li>
+            <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-green-400 shrink-0"></i><span class="text-gray-300">No ads</span></li>
           </ul>
-          <a href="#download" class="btn-primary w-full py-3 rounded-full text-white font-semibold text-center block">Start Free Trial</a>
+          <a href="#download" class="btn-primary w-full py-3 rounded-full text-white font-semibold text-center block">Start Pro</a>
         </div>
-
-        <div class="glass-morphism rounded-2xl p-8 card-hover">
+        <!-- Ultra -->
+        <div class="glass rounded-2xl p-8 card-hover fade-up">
           <div class="text-center mb-8">
             <div class="text-sm font-medium text-gray-400 mb-2">Ultra</div>
-            <div class="text-4xl font-bold text-white mb-2">$9.99</div>
+            <div class="text-4xl font-bold text-white mb-2">$7.99</div>
             <div class="text-sm text-gray-400">per month</div>
           </div>
           <ul class="space-y-3 mb-8">
-            <li class="flex items-center space-x-3">
-              <i data-lucide="check" class="w-5 h-5 text-green-400"></i>
-              <span class="text-gray-300">Everything in Pro</span>
-            </li>
-            <li class="flex items-center space-x-3">
-              <i data-lucide="check" class="w-5 h-5 text-green-400"></i>
-              <span class="text-gray-300">Dedicated IP option</span>
-            </li>
-            <li class="flex items-center space-x-3">
-              <i data-lucide="check" class="w-5 h-5 text-green-400"></i>
-              <span class="text-gray-300">Priority support</span>
-            </li>
-            <li class="flex items-center space-x-3">
-              <i data-lucide="check" class="w-5 h-5 text-green-400"></i>
-              <span class="text-gray-300">Advanced split tunneling</span>
-            </li>
-            <li class="flex items-center space-x-3">
-              <i data-lucide="check" class="w-5 h-5 text-green-400"></i>
-              <span class="text-gray-300">10 simultaneous devices</span>
-            </li>
-            <li class="flex items-center space-x-3">
-              <i data-lucide="check" class="w-5 h-5 text-green-400"></i>
-              <span class="text-gray-300">Stealth mode</span>
-            </li>
+            <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-green-400 shrink-0"></i><span class="text-gray-300">Everything in Pro</span></li>
+            <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-green-400 shrink-0"></i><span class="text-gray-300">Dedicated IP option</span></li>
+            <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-green-400 shrink-0"></i><span class="text-gray-300">Split tunneling</span></li>
+            <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-green-400 shrink-0"></i><span class="text-gray-300">10 simultaneous devices</span></li>
+            <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-green-400 shrink-0"></i><span class="text-gray-300">Priority support</span></li>
+            <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-green-400 shrink-0"></i><span class="text-gray-300">Stealth mode</span></li>
           </ul>
-          <a href="#download" class="btn-secondary w-full py-3 rounded-full text-white font-semibold text-center block">Start Free Trial</a>
+          <a href="#download" class="btn-secondary w-full py-3 rounded-full text-white font-semibold text-center block">Start Ultra</a>
         </div>
       </div>
+      <p class="text-center text-gray-500 text-sm mt-8">All plans include WireGuard®, DNS protection, and zero logs. Pay with card, crypto, or voucher code.</p>
     </div>
   </section>
 
-  <!-- Download Section -->
+  <!-- Download -->
   <section class="py-24 px-6 border-t border-white/10" id="download">
     <div class="max-w-7xl mx-auto text-center">
       <div class="mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Get Started Today</h2>
-        <p class="text-xl text-gray-300 max-w-2xl mx-auto">Download Suphuzi VPN on all your devices and protect your privacy instantly.</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Download Suphuzi VPN</h2>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">One-click install on every platform. Free plan included.</p>
       </div>
-
-      <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-        <a href="#" class="glass-morphism rounded-2xl p-8 card-hover flex items-center space-x-4">
-          <div class="w-16 h-16 bg-black rounded-xl flex items-center justify-center">
-            <i data-lucide="smartphone" class="w-8 h-8 text-white"></i>
-          </div>
-          <div class="text-left">
-            <div class="text-sm text-gray-400 mb-1">Download on the</div>
-            <div class="text-xl font-bold text-white">App Store</div>
-          </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+        <!-- Android -->
+        <a href="https://play.google.com/store/apps/details?id=com.suphuzi.vpn" class="glass rounded-2xl p-6 card-hover fade-up flex flex-col items-center text-center">
+          <div class="platform-icon bg-green-600/20 mb-4"><i data-lucide="smartphone" class="w-6 h-6 text-green-400"></i></div>
+          <div class="text-sm text-gray-400 mb-1">Get it on</div>
+          <div class="text-lg font-bold text-white">Google Play</div>
+          <div class="text-xs text-green-400 mt-2">Available Now</div>
         </a>
-
-        <a href="#" class="glass-morphism rounded-2xl p-8 card-hover flex items-center space-x-4">
-          <div class="w-16 h-16 bg-green-600 rounded-xl flex items-center justify-center">
-            <i data-lucide="play" class="w-8 h-8 text-white"></i>
-          </div>
-          <div class="text-left">
-            <div class="text-sm text-gray-400 mb-1">Get it on</div>
-            <div class="text-xl font-bold text-white">Google Play</div>
-          </div>
+        <!-- Windows -->
+        <a href="https://github.com/meviza/Suphuzi-VPN-Support/releases/latest" class="glass rounded-2xl p-6 card-hover fade-up flex flex-col items-center text-center">
+          <div class="platform-icon bg-blue-600/20 mb-4"><i data-lucide="monitor" class="w-6 h-6 text-blue-400"></i></div>
+          <div class="text-sm text-gray-400 mb-1">Download for</div>
+          <div class="text-lg font-bold text-white">Windows</div>
+          <div class="text-xs text-blue-400 mt-2">.exe Installer</div>
         </a>
+        <!-- Linux -->
+        <a href="https://github.com/meviza/Suphuzi-VPN-Support/releases/latest" class="glass rounded-2xl p-6 card-hover fade-up flex flex-col items-center text-center">
+          <div class="platform-icon bg-orange-600/20 mb-4"><i data-lucide="terminal" class="w-6 h-6 text-orange-400"></i></div>
+          <div class="text-sm text-gray-400 mb-1">Download for</div>
+          <div class="text-lg font-bold text-white">Linux</div>
+          <div class="text-xs text-orange-400 mt-2">AppImage</div>
+        </a>
+        <!-- macOS -->
+        <a href="https://github.com/meviza/Suphuzi-VPN-Support/releases/latest" class="glass rounded-2xl p-6 card-hover fade-up flex flex-col items-center text-center">
+          <div class="platform-icon bg-gray-600/20 mb-4"><i data-lucide="laptop" class="w-6 h-6 text-gray-300"></i></div>
+          <div class="text-sm text-gray-400 mb-1">Download for</div>
+          <div class="text-lg font-bold text-white">macOS</div>
+          <div class="text-xs text-gray-400 mt-2">.dmg</div>
+        </a>
+      </div>
+      <div class="mt-8 glass rounded-xl p-4 max-w-md mx-auto">
+        <div class="flex items-center space-x-3 justify-center">
+          <i data-lucide="smartphone" class="w-5 h-5 text-gray-400"></i>
+          <span class="text-gray-400 text-sm">iOS coming Q3 2026 — <a href="support.html" class="text-blue-400 hover:underline">Get notified</a></span>
+        </div>
       </div>
     </div>
   </section>
@@ -570,9 +399,8 @@
             </div>
             <span class="text-xl font-bold text-white">Suphuzi VPN</span>
           </div>
-          <p class="text-gray-400 text-sm leading-relaxed">Military-grade privacy protection with RAM-only servers and zero logs.</p>
+          <p class="text-gray-400 text-sm leading-relaxed">WireGuard® VPN with RAM-only servers and verified zero-log policy. Built for privacy.</p>
         </div>
-
         <div>
           <h4 class="font-semibold text-white mb-4">Product</h4>
           <ul class="space-y-2">
@@ -580,216 +408,52 @@
             <li><a href="#security" class="text-gray-400 hover:text-white transition-colors text-sm">Security</a></li>
             <li><a href="#pricing" class="text-gray-400 hover:text-white transition-colors text-sm">Pricing</a></li>
             <li><a href="#download" class="text-gray-400 hover:text-white transition-colors text-sm">Download</a></li>
+            <li><a href="#servers" class="text-gray-400 hover:text-white transition-colors text-sm">Server Locations</a></li>
           </ul>
         </div>
-
         <div>
-          <h4 class="font-semibold text-white mb-4">Support</h4>
+          <h4 class="font-semibold text-white mb-4">Company</h4>
           <ul class="space-y-2">
             <li><a href="support.html" class="text-gray-400 hover:text-white transition-colors text-sm">Help Center</a></li>
-            <li><a href="support.html" class="text-gray-400 hover:text-white transition-colors text-sm">Contact Us</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Status</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Community</a></li>
+            <li><a href="company.html" class="text-gray-400 hover:text-white transition-colors text-sm">About Us</a></li>
+            <li><a href="mailto:support@suphuzi.com" class="text-gray-400 hover:text-white transition-colors text-sm">Contact</a></li>
+            <li><a href="account-deletion.html" class="text-gray-400 hover:text-white transition-colors text-sm">Delete Account</a></li>
           </ul>
         </div>
-
         <div>
           <h4 class="font-semibold text-white mb-4">Legal</h4>
           <ul class="space-y-2">
             <li><a href="privacy.html" class="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a></li>
             <li><a href="terms.html" class="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Cookie Policy</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">GDPR</a></li>
           </ul>
         </div>
       </div>
-
       <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
-        <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2026 Suphuzi VPN. All rights reserved.</p>
+        <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2026 Suphuzi VPN. All rights reserved. WireGuard® is a registered trademark of Jason A. Donenfeld.</p>
         <div class="flex space-x-6">
-          <a href="#" class="text-gray-400 hover:text-white transition-colors">
-            <i data-lucide="twitter" class="w-5 h-5"></i>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-white transition-colors">
-            <i data-lucide="github" class="w-5 h-5"></i>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-white transition-colors">
-            <i data-lucide="telegram" class="w-5 h-5"></i>
-          </a>
+          <a href="https://github.com/meviza/Suphuzi-VPN-Support" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="github" class="w-5 h-5"></i></a>
+          <a href="mailto:support@suphuzi.com" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="mail" class="w-5 h-5"></i></a>
         </div>
       </div>
     </div>
   </footer>
 
   <script>
-    // Initialize Lucide icons
     lucide.createIcons();
-
-    // Mobile menu toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
     });
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-          // Close mobile menu if open
-          mobileMenu.classList.add('hidden');
-        }
+        const t = document.querySelector(this.getAttribute('href'));
+        if (t) { t.scrollIntoView({ behavior: 'smooth', block: 'start' }); document.getElementById('mobile-menu').classList.add('hidden'); }
       });
     });
-
-    // Add scroll effect to navigation
-    window.addEventListener('scroll', () => {
-      const nav = document.querySelector('nav');
-      if (window.scrollY > 50) {
-        nav.classList.add('bg-opacity-95');
-      } else {
-        nav.classList.remove('bg-opacity-95');
-      }
-    });
-
-    // Intersection Observer for fade-in animations
-    const fadeObserverOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const fadeObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, fadeObserverOptions);
-
-    // Observe all cards and sections
-    document.querySelectorAll('.card-hover').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      fadeObserver.observe(el);
-    });
-  </script>
-</body>
-</html>
-
-      <div class="pricing-card fade-in">
-        <div class="pricing-plan">Ultra</div>
-        <div class="pricing-price" style="background:linear-gradient(135deg,var(--gold),#ffb347);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$8.99</div>
-        <div class="pricing-period">per month</div>
-        <ul class="pricing-features">
-          <li class="active"><span class="check">✓</span> Everything in Pro</li>
-          <li class="active"><span class="check">✓</span> Multi-hop routing</li>
-          <li class="active"><span class="check">✓</span> Dedicated IP address</li>
-          <li class="active"><span class="check">✓</span> Tor over VPN</li>
-          <li class="active"><span class="check">✓</span> 10 simultaneous devices</li>
-          <li class="active"><span class="check">✓</span> Priority 24/7 support</li>
-          <li class="active"><span class="check">✓</span> Double encryption</li>
-        </ul>
-        <a href="#download" class="pricing-btn pricing-btn-outline">Get Ultra</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- DOWNLOAD -->
-  <section class="download-section" id="download">
-    <div class="download-glow"></div>
-    <div class="section-tag">Download</div>
-    <h2 class="section-title fade-in" style="font-size:clamp(36px,5vw,64px);">
-      Start protecting yourself.<br/>It takes 30 seconds.
-    </h2>
-    <p style="color:var(--muted);font-size:18px;margin-top:16px;margin-bottom:8px;" class="fade-in">
-      Free plan available. No credit card required.
-    </p>
-    <div class="store-buttons fade-in">
-      <a href="#" class="store-btn">
-        <span class="store-btn-icon"></span>
-        <span class="store-btn-text">
-          <small>Download on the</small>
-          <strong>App Store</strong>
-        </span>
-      </a>
-      <a href="#" class="store-btn">
-        <span class="store-btn-icon">▶</span>
-        <span class="store-btn-text">
-          <small>Get it on</small>
-          <strong>Google Play</strong>
-        </span>
-      </a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="/" class="nav-logo" style="text-decoration:none;">
-            <div class="logo-icon">🛡</div>
-            <span class="logo-text">Suphuzi VPN</span>
-          </a>
-          <p>The world's fastest VPN powered by WireGuard®. RAM-only servers, zero logs, and global coverage. Your privacy. Your rules.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Product</h4>
-          <a href="#features">Features</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#download">Download</a>
-          <a href="#security">Security</a>
-        </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <a href="support.html">Support</a>
-          <a href="company.html">Company Overview</a>
-          <a href="company.html">Company Overview</a>
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="terms.html">Terms of Service</a>
-          <a href="account-deletion.html">Account Deletion</a>
-          <a href="mailto:support@suphuzi.com">Contact</a>
-        </div>
-        <div class="footer-col">
-          <h4>Resources</h4>
-          <a href="#">WireGuard® Guide</a>
-          <a href="#">What is a VPN?</a>
-          <a href="#">Server Locations</a>
-          <a href="#">Warrant Canary</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 Suphuzi. All rights reserved. WireGuard® is a registered trademark of Jason A. Donenfeld.</span>
-        <div class="footer-legal">
-          <a href="privacy.html">Privacy</a>
-          <a href="terms.html">Terms</a>
-          <a href="account-deletion.html">Account Deletion</a>
-          <a href="support.html">Support</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Scroll animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(el => {
-        if (el.isIntersecting) {
-          el.target.classList.add('visible');
-        }
-      });
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1 });
-
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
   </script>
 </body>
 </html>
