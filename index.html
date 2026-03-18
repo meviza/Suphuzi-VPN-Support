@@ -19,6 +19,9 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
+  <!-- i18n -->
+  <script src="i18n.js" defer></script>
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -60,12 +63,25 @@
           <span class="text-xl font-bold text-white">Suphuzi VPN</span>
         </div>
         <div class="hidden md:flex items-center space-x-8">
-          <a href="#features" class="text-gray-300 hover:text-white transition-colors">Features</a>
-          <a href="#security" class="text-gray-300 hover:text-white transition-colors">Security</a>
-          <a href="#pricing" class="text-gray-300 hover:text-white transition-colors">Pricing</a>
-          <a href="#servers" class="text-gray-300 hover:text-white transition-colors">Servers</a>
-          <a href="support.html" class="text-gray-300 hover:text-white transition-colors">Support</a>
-          <a href="#download" class="btn-primary px-6 py-2 rounded-full text-white font-medium">Download</a>
+          <a href="#features" class="text-gray-300 hover:text-white transition-colors" data-i18n="navFeatures">Features</a>
+          <a href="#security" class="text-gray-300 hover:text-white transition-colors" data-i18n="navSecurity">Security</a>
+          <a href="#pricing" class="text-gray-300 hover:text-white transition-colors" data-i18n="navPricing">Pricing</a>
+          <a href="#servers" class="text-gray-300 hover:text-white transition-colors" data-i18n="navServers">Servers</a>
+          <a href="support.html" class="text-gray-300 hover:text-white transition-colors" data-i18n="navSupport">Support</a>
+          <div class="flex items-center space-x-1 text-sm">
+            <button onclick="setLanguage('en')" class="lang-btn text-blue-400 hover:text-white px-1" data-lang="en">EN</button>
+            <span class="text-gray-600">|</span>
+            <button onclick="setLanguage('tr')" class="lang-btn text-gray-400 hover:text-white px-1" data-lang="tr">TR</button>
+            <span class="text-gray-600">|</span>
+            <button onclick="setLanguage('hi')" class="lang-btn text-gray-400 hover:text-white px-1" data-lang="hi">HI</button>
+            <span class="text-gray-600">|</span>
+            <button onclick="setLanguage('ar')" class="lang-btn text-gray-400 hover:text-white px-1" data-lang="ar">AR</button>
+            <span class="text-gray-600">|</span>
+            <button onclick="setLanguage('ru')" class="lang-btn text-gray-400 hover:text-white px-1" data-lang="ru">RU</button>
+            <span class="text-gray-600">|</span>
+            <button onclick="setLanguage('es')" class="lang-btn text-gray-400 hover:text-white px-1" data-lang="es">ES</button>
+          </div>
+          <a href="#download" class="btn-primary px-6 py-2 rounded-full text-white font-medium" data-i18n="navDownload">Download</a>
         </div>
         <button class="md:hidden text-white" id="mobile-menu-btn">
           <i data-lucide="menu" class="w-6 h-6"></i>
@@ -89,33 +105,32 @@
     <div class="max-w-7xl mx-auto text-center">
       <div class="inline-flex items-center space-x-2 glass px-4 py-2 rounded-full mb-8">
         <div class="w-2 h-2 bg-green-400 rounded-full pulse"></div>
-        <span class="text-sm text-gray-300">Available on Android, Windows, Linux &amp; macOS</span>
+        <span class="text-sm text-gray-300" data-i18n="heroTag">Available on Android, Windows, Linux &amp; macOS</span>
       </div>
       <h1 class="text-5xl md:text-7xl font-bold mb-6">
-        <span class="block text-white">The Last VPN</span>
-        <span class="gradient-text">You'll Ever Need</span>
+        <span class="block text-white" data-i18n="heroTitle1">The Last VPN</span>
+        <span class="gradient-text" data-i18n="heroTitle2">You'll Ever Need</span>
       </h1>
       <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-        WireGuard® encryption on every platform. RAM-only servers across 4 continents.
-        Zero logs. Verified by real traffic tests. Your privacy is the foundation.
+        <span data-i18n="heroDesc">WireGuard® encryption on every platform. RAM-only servers across 4 continents. Zero logs. Verified by real traffic tests. Your privacy is the foundation.</span>
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
         <a href="#download" class="btn-primary px-8 py-4 rounded-full text-white font-semibold text-lg inline-flex items-center justify-center space-x-2">
           <i data-lucide="download" class="w-5 h-5"></i>
-          <span>Download Free</span>
+          <span data-i18n="downloadFree">Download Free</span>
         </a>
         <a href="#features" class="btn-secondary px-8 py-4 rounded-full text-white font-semibold text-lg inline-flex items-center justify-center space-x-2">
-          <span>See How It Works</span>
+          <span data-i18n="seeHow">See How It Works</span>
           <i data-lucide="arrow-right" class="w-5 h-5"></i>
         </a>
       </div>
       <!-- Real Stats -->
       <div class="grid grid-cols-2 md:grid-cols-5 gap-8 max-w-4xl mx-auto">
-        <div class="text-center"><div class="text-3xl font-bold gradient-text">&lt;35ms</div><div class="text-sm text-gray-400 mt-1">EU Avg Ping</div></div>
-        <div class="text-center"><div class="text-3xl font-bold gradient-text">7</div><div class="text-sm text-gray-400 mt-1">Server Locations</div></div>
-        <div class="text-center"><div class="text-3xl font-bold gradient-text">1Gbps</div><div class="text-sm text-gray-400 mt-1">Per Server</div></div>
-        <div class="text-center"><div class="text-3xl font-bold gradient-text">0</div><div class="text-sm text-gray-400 mt-1">Logs Stored</div></div>
-        <div class="text-center"><div class="text-3xl font-bold gradient-text">99.9%</div><div class="text-sm text-gray-400 mt-1">Uptime</div></div>
+        <div class="text-center"><div class="text-3xl font-bold gradient-text">&lt;35ms</div><div class="text-sm text-gray-400 mt-1" data-i18n="statPing">EU Avg Ping</div></div>
+        <div class="text-center"><div class="text-3xl font-bold gradient-text">7</div><div class="text-sm text-gray-400 mt-1" data-i18n="statServers">Server Locations</div></div>
+        <div class="text-center"><div class="text-3xl font-bold gradient-text">1Gbps</div><div class="text-sm text-gray-400 mt-1" data-i18n="statBandwidth">Per Server</div></div>
+        <div class="text-center"><div class="text-3xl font-bold gradient-text">0</div><div class="text-sm text-gray-400 mt-1" data-i18n="statLogs">Logs Stored</div></div>
+        <div class="text-center"><div class="text-3xl font-bold gradient-text">99.9%</div><div class="text-sm text-gray-400 mt-1" data-i18n="statUptime">Uptime</div></div>
       </div>
     </div>
     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 bounce">
@@ -128,8 +143,8 @@
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
         <div class="inline-block text-sm font-semibold text-blue-400 mb-4">Why Suphuzi</div>
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Built Different. Built for You.</h2>
-        <p class="text-xl text-gray-300 max-w-2xl mx-auto">Every detail engineered for maximum privacy, speed, and simplicity.</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4" data-i18n="whyTitle">Built Different. Built for You.</h2>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto" data-i18n="whyDesc">Every detail engineered for maximum privacy, speed, and simplicity.</p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="glass rounded-2xl p-8 card-hover fade-up">
@@ -281,8 +296,8 @@
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
         <div class="inline-block text-sm font-semibold text-blue-400 mb-4">Plans</div>
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Simple, Honest Pricing.</h2>
-        <p class="text-xl text-gray-300 max-w-2xl mx-auto">No hidden fees. Cancel anytime. WireGuard® included on every plan.</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4" data-i18n="pricingTitle">Simple, Honest Pricing.</h2>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto" data-i18n="pricingDesc">No hidden fees. Cancel anytime. WireGuard® included on every plan.</p>
       </div>
       <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         <!-- Free -->
@@ -346,8 +361,8 @@
   <section class="py-24 px-6 border-t border-white/10" id="download">
     <div class="max-w-7xl mx-auto text-center">
       <div class="mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Download Suphuzi VPN</h2>
-        <p class="text-xl text-gray-300 max-w-2xl mx-auto">One-click install on every platform. Free plan included.</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4" data-i18n="downloadTitle">Download Suphuzi VPN</h2>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto" data-i18n="downloadDesc">One-click install on every platform. Free plan included.</p>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
         <!-- Android -->
